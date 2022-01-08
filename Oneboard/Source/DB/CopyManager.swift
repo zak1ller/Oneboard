@@ -21,15 +21,12 @@ class CopyManager {
         })
     }
     
-    static func get(sort: CopyGetSort.GetSortType) -> Results<Copy> {
-        switch sort {
-        case .none:
-            return try! Realm().objects(Copy.self)
-        case .asending:
-            return try! Realm().objects(Copy.self).sorted(byKeyPath: "createdDate", ascending: true)
-        case .desending:
-            return try! Realm().objects(Copy.self).sorted(byKeyPath: "createdDate", ascending: false)
-        }
-        
+    static func get() -> Results<Copy> {
+        return try! Realm().objects(Copy.self).sorted(byKeyPath: "createdDate", ascending: false)
+    }
+    
+    static func search(searchText: String) -> Results<Copy> {
+        let predic = NSPredicate(format: "contents CONTAIN %@", searchText)
+        return try! Realm().objects(Copy.self).filter(predic).sorted(byKeyPath: "createdDate", ascending: false)
     }
 }
