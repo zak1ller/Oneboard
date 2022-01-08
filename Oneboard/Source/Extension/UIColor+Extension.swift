@@ -11,9 +11,6 @@ import UIKit
 extension UIColor {
     static let background = UIColor.white
     static let main = UIColor.black
-    static let titleGray = UIColor(hex: "#333333")
-    static let subTitleGray = UIColor(hex: "#646464")
-    static let subTitleLightGray = UIColor(hex: "#D3D3D3")
     
     public convenience init?(hex: String) {
         let r, g, b, a: CGFloat
