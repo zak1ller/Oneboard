@@ -10,9 +10,14 @@
 		6A498430758C96DBE1B75C6F /* Pods_Oneboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01659EAD020BBD4CE61A66BB /* Pods_Oneboard.framework */; };
 		7143410C2789782D00F148A0 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7143410B2789782D00F148A0 /* UIColor+Extension.swift */; };
 		7166D4272789B15B0028413F /* Copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7166D4262789B15B0028413F /* Copy.swift */; };
-		7166D4292789DDC80028413F /* ForceColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7166D4282789DDC80028413F /* ForceColor.swift */; };
 		7166D42B2789DFB80028413F /* CopyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7166D42A2789DFB80028413F /* CopyManager.swift */; };
 		7166D42F278A0AB90028413F /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7166D42E278A0AB90028413F /* UIButton+Extension.swift */; };
+		7166D431278AC3F00028413F /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7166D430278AC3F00028413F /* AddViewController.swift */; };
+		7166D433278AC5060028413F /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7166D432278AC5060028413F /* UIFont+Extension.swift */; };
+		7166D437278AE14C0028413F /* AddViewController+TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7166D436278AE14C0028413F /* AddViewController+TextView.swift */; };
+		7166D439278AE7D90028413F /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7166D438278AE7D90028413F /* String+Extension.swift */; };
+		7166D43B278AE8AE0028413F /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7166D43A278AE8AE0028413F /* Date+Extension.swift */; };
+		7166D43D278AEC2C0028413F /* MainViewController+AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7166D43C278AEC2C0028413F /* MainViewController+AddView.swift */; };
 		71BEAA7827896F6A00EF8FE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEAA7727896F6A00EF8FE8 /* AppDelegate.swift */; };
 		71BEAA7A27896F6A00EF8FE8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEAA7927896F6A00EF8FE8 /* SceneDelegate.swift */; };
 		71BEAA7C27896F6A00EF8FE8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEAA7B27896F6A00EF8FE8 /* MainViewController.swift */; };
@@ -49,9 +54,14 @@
 		419252E8333380C74097F205 /* Pods-OneboardTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneboardTests.release.xcconfig"; path = "Target Support Files/Pods-OneboardTests/Pods-OneboardTests.release.xcconfig"; sourceTree = "<group>"; };
 		7143410B2789782D00F148A0 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		7166D4262789B15B0028413F /* Copy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Copy.swift; sourceTree = "<group>"; };
-		7166D4282789DDC80028413F /* ForceColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForceColor.swift; sourceTree = "<group>"; };
 		7166D42A2789DFB80028413F /* CopyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyManager.swift; sourceTree = "<group>"; };
 		7166D42E278A0AB90028413F /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		7166D430278AC3F00028413F /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		7166D432278AC5060028413F /* UIFont+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
+		7166D436278AE14C0028413F /* AddViewController+TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AddViewController+TextView.swift"; sourceTree = "<group>"; };
+		7166D438278AE7D90028413F /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		7166D43A278AE8AE0028413F /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		7166D43C278AEC2C0028413F /* MainViewController+AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+AddView.swift"; sourceTree = "<group>"; };
 		71BEAA7427896F6A00EF8FE8 /* Oneboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Oneboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71BEAA7727896F6A00EF8FE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		71BEAA7927896F6A00EF8FE8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -108,6 +118,7 @@
 				714341072789776C00F148A0 /* Delegate */,
 				7166D4242789AFD20028413F /* Model */,
 				7166D4252789AFEF0028413F /* DB */,
+				7166D43E278AEFF10028413F /* View */,
 				714341092789778D00F148A0 /* ViewController */,
 			);
 			path = Source;
@@ -143,7 +154,8 @@
 		714341092789778D00F148A0 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				71BEAA7B27896F6A00EF8FE8 /* MainViewController.swift */,
+				7166D434278AE1320028413F /* Main */,
+				7166D435278AE1380028413F /* Add */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -153,6 +165,9 @@
 			children = (
 				7143410B2789782D00F148A0 /* UIColor+Extension.swift */,
 				7166D42E278A0AB90028413F /* UIButton+Extension.swift */,
+				7166D432278AC5060028413F /* UIFont+Extension.swift */,
+				7166D438278AE7D90028413F /* String+Extension.swift */,
+				7166D43A278AE8AE0028413F /* Date+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -161,7 +176,6 @@
 			isa = PBXGroup;
 			children = (
 				7166D4262789B15B0028413F /* Copy.swift */,
-				7166D4282789DDC80028413F /* ForceColor.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -172,6 +186,39 @@
 				7166D42A2789DFB80028413F /* CopyManager.swift */,
 			);
 			path = DB;
+			sourceTree = "<group>";
+		};
+		7166D434278AE1320028413F /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				71BEAA7B27896F6A00EF8FE8 /* MainViewController.swift */,
+				7166D43C278AEC2C0028413F /* MainViewController+AddView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		7166D435278AE1380028413F /* Add */ = {
+			isa = PBXGroup;
+			children = (
+				7166D430278AC3F00028413F /* AddViewController.swift */,
+				7166D436278AE14C0028413F /* AddViewController+TextView.swift */,
+			);
+			path = Add;
+			sourceTree = "<group>";
+		};
+		7166D43E278AEFF10028413F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7166D43F278AF0080028413F /* Main */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7166D43F278AF0080028413F /* Main */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		71BEAA6B27896F6A00EF8FE8 = {
@@ -485,13 +532,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7166D43D278AEC2C0028413F /* MainViewController+AddView.swift in Sources */,
 				71BEAA7C27896F6A00EF8FE8 /* MainViewController.swift in Sources */,
-				7166D4292789DDC80028413F /* ForceColor.swift in Sources */,
+				7166D43B278AE8AE0028413F /* Date+Extension.swift in Sources */,
+				7166D431278AC3F00028413F /* AddViewController.swift in Sources */,
+				7166D437278AE14C0028413F /* AddViewController+TextView.swift in Sources */,
+				7166D439278AE7D90028413F /* String+Extension.swift in Sources */,
 				71BEAA7827896F6A00EF8FE8 /* AppDelegate.swift in Sources */,
 				71BEAA7A27896F6A00EF8FE8 /* SceneDelegate.swift in Sources */,
 				7166D42B2789DFB80028413F /* CopyManager.swift in Sources */,
 				7166D42F278A0AB90028413F /* UIButton+Extension.swift in Sources */,
 				7166D4272789B15B0028413F /* Copy.swift in Sources */,
+				7166D433278AC5060028413F /* UIFont+Extension.swift in Sources */,
 				7143410C2789782D00F148A0 /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

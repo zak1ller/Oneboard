@@ -9,10 +9,28 @@ import Foundation
 import RealmSwift
 
 class CopyManager {
-    static func append(copy: Copy) {
+    static func append(subject: String?, contents: String) -> Copy.ErrorMessage? {
+        if contents.isEmpty {
+            return .requireTypeContents
+        }
+        
+        let copy = Copy()
+        copy.subject = subject
+        copy.contents = contents
+        copy.id = String.randomString(of: 12)
+        copy.createdDate = Date.currentDateString()
+        
+        var predic = NSPredicate(format: "id == %@", copy.id)
+        while try! Realm().objects(Copy.self).filter(predic).count != 0 {
+            // Copy 아이디가 중복되지 않을 때까지 반복해서 아이디를 초기화합니다.
+            copy.id = String.randomString(of: 12)
+            predic = NSPredicate(format: "id == %@", copy.id)
+        }
+       
         try! Realm().write({
             try! Realm().add(copy)
         })
+        return nil
     }
     
     static func remove(copy: Copy) {
