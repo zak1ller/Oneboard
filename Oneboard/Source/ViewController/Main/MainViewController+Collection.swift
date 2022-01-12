@@ -68,6 +68,7 @@ extension MainViewController: MainListCollectionViewCellDelegate {
     
     func editCopy(item: Copy) {
         let vc = AddViewController()
+        vc.delegate = self
         vc.isEditMode = true
         vc.toEditCopyItem = item
         present(vc, animated: true, completion: nil)

@@ -10,6 +10,12 @@ import RealmSwift
 
 final class CopyManager {
     static func append(subject: String?, contents: String) -> Copy.ErrorMessage? {
+        if let subject = subject {
+            if subject.count > Copy.RequiredLength.subjectMaximumLength.rawValue {
+                return .tooLongSubject
+            }
+        }
+        
         if contents.isEmpty {
             return .requireTypeContents
         }

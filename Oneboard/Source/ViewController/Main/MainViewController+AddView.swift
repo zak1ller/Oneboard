@@ -10,6 +10,7 @@ import UIKit
 
 extension MainViewController: AddViewControllerDelegate {
     func addViewControllerDidSave(isEditingMode: Bool) {
+        print(111)
         fetchList()
     }
 }

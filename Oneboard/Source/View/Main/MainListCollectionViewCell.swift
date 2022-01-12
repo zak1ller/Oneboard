@@ -20,7 +20,7 @@ class MainListCollectionViewCell: UICollectionViewCell {
     })
     var subjectLabel = UILabel().then{
         $0.textColor = UIColor.darkText
-        $0.font = UIFont.textButton
+        $0.font = UIFont.title
     }
     var contentLabel = UILabel().then{
         $0.textColor = UIColor.darkText

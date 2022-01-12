@@ -11,15 +11,19 @@ import UIKit
 extension AddViewController: UITextViewDelegate {
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.textColor == UIColor.lightGray {
-            textView.text = nil
-            textView.textColor = UIColor.darkText
+            DispatchQueue.main.async {
+                textView.text = nil
+                textView.textColor = UIColor.darkText
+            }
         }
     }
        
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text.isEmpty {
-            textView.text = contentTextViewPlaceHolder
-            textView.textColor = UIColor.lightGray
+            DispatchQueue.main.async {
+                textView.text = self.contentTextViewPlaceHolder
+                textView.textColor = UIColor.lightGray
+            }
         }
     }
 }
