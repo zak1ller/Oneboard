@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 extension MainViewController: AddViewControllerDelegate {
-    func addViewControllerDidSave() {
-        
+    func addViewControllerDidSave(isEditingMode: Bool) {
+        fetchList()
     }
 }

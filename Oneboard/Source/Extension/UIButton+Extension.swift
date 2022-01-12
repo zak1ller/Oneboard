@@ -15,7 +15,6 @@ extension UIButton {
         let closure: UIButtonTargetClosure
         init(_ closure: @escaping UIButtonTargetClosure) {
             self.closure = closure
-            
         }
     }
 

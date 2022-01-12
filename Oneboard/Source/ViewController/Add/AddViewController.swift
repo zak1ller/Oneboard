@@ -9,13 +9,12 @@ import Foundation
 import UIKit
 
 protocol AddViewControllerDelegate: AnyObject {
-    func addViewControllerDidSave()
+    func addViewControllerDidSave(isEditingMode: Bool)
 }
 
 class AddViewController: UIViewController {
     var containerView = UIView()
     var topTitleLabel = UILabel().then{
-        $0.text = "새로운 목록"
         $0.textColor = UIColor.darkText
         $0.textAlignment = .center
         $0.font = UIFont.topTitle
@@ -40,7 +39,6 @@ class AddViewController: UIViewController {
         $0.backgroundColor = UIColor.divider
     }
     var contentTextView = UITextView().then{
-        $0.textColor = UIColor.lightGray
         $0.tintColor = UIColor.darkText
         $0.font = UIFont.contents
         $0.textContainerInset = UIEdgeInsets.zero
@@ -50,6 +48,8 @@ class AddViewController: UIViewController {
     weak var delegate: AddViewControllerDelegate?
     private var keyboardHeight: CGFloat = 0
     let contentTextViewPlaceHolder = "내용"
+    var isEditMode = false
+    var toEditCopyItem: Copy?
     
     deinit {
         print("AddViewController Deinited.")
@@ -58,6 +58,7 @@ class AddViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setView()
+        setMode()
         
         NotificationCenter.default.addObserver(
             self,
@@ -73,7 +74,9 @@ class AddViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        subjectTextField.becomeFirstResponder()
+        if !isEditMode {
+            subjectTextField.becomeFirstResponder()
+        }
     }
     
     override func viewSafeAreaInsetsDidChange() {
@@ -109,22 +112,41 @@ class AddViewController: UIViewController {
     }
 
     @objc func pressedSaveButton() {
-        save()
+        if isEditMode {
+            edit()
+        } else {
+            register()
+        }
     }
     
     @objc func pressedCloseButton() {
         dismiss(animated: true, completion: nil)
     }
     
-    func save() {
-        let subject = subjectTextField.text
-        var content: String {
-            if contentTextView.textColor == UIColor.lightGray {
-                return ""
-            } else {
-                return contentTextView.text ?? ""
-            }
+    func setMode() {
+        if isEditMode {
+            topTitleLabel.text = "편집"
+            subjectTextField.text = toEditCopyItem?.subject
+            contentTextView.text = toEditCopyItem?.contents
+            contentTextView.textColor = UIColor.darkText
+        } else {
+            topTitleLabel.text = "새로운 목록"
+            contentTextView.text = contentTextViewPlaceHolder
+            contentTextView.textColor = UIColor.lightGray
         }
+    }
+    
+    func makeContent() -> String {
+        if contentTextView.textColor == UIColor.lightGray {
+            return ""
+        } else {
+            return contentTextView.text ?? ""
+        }
+    }
+    
+    func register() {
+        let subject = subjectTextField.text
+        let content = makeContent()
         
         if let error = CopyManager.append(subject: subject, contents: content) {
             let alert = UIAlertController(title: error.rawValue, message: nil, preferredStyle: .alert)
@@ -132,7 +154,23 @@ class AddViewController: UIViewController {
             present(alert, animated: true, completion: nil)
         } else {
             dismiss(animated: true, completion: {
-                self.delegate?.addViewControllerDidSave()
+                self.delegate?.addViewControllerDidSave(isEditingMode: self.isEditMode)
+            })
+        }
+    }
+    
+    func edit() {
+        guard let copy = toEditCopyItem else { return }
+        let subject = subjectTextField.text
+        let content = makeContent()
+        
+        if let error = CopyManager.edit(from: copy, newSubject: subject, newContents: content) {
+            let alert = UIAlertController(title: error.rawValue, message: nil, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "확인", style: .cancel, handler: nil))
+            present(alert, animated: true, completion: nil)
+        } else {
+            dismiss(animated: true, completion: {
+                self.delegate?.addViewControllerDidSave(isEditingMode: self.isEditMode)
             })
         }
     }
@@ -148,7 +186,6 @@ class AddViewController: UIViewController {
         view.addSubview(contentTextView)
         saveButton.addTarget(self, action: #selector(pressedSaveButton), for: .touchUpInside)
         closeButton.addTarget(self, action: #selector(pressedCloseButton), for: .touchUpInside)
-        contentTextView.text = contentTextViewPlaceHolder
         contentTextView.delegate = self
     }
 }

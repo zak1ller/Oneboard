@@ -5,11 +5,15 @@ PODS:
   - Realm/Headers (10.20.1)
   - RealmSwift (10.20.1):
     - Realm (= 10.20.1)
+  - SnackBar.swift (0.1.0):
+    - SnapKit
+  - SnapKit (5.0.1)
   - Then (2.7.0)
 
 DEPENDENCIES:
   - PinLayout
   - RealmSwift
+  - SnackBar.swift
   - Then
 
 SPEC REPOS:
@@ -17,14 +21,18 @@ SPEC REPOS:
     - PinLayout
     - Realm
     - RealmSwift
+    - SnackBar.swift
+    - SnapKit
     - Then
 
 SPEC CHECKSUMS:
   PinLayout: e50e9a748b632905fca6e67043ea4b05d6c92186
   Realm: fac5ecd031fcb81171627b74944c885662d4b266
   RealmSwift: 9b02d25acb46a14756bde9893abb99e2e3675923
+  SnackBar.swift: 79ea4df13ea9e6633137dd6acbd490534d26440d
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   Then: acfe0be7e98221c6204e12f8161459606d5d822d
 
-PODFILE CHECKSUM: 3f6011a48fce9a313cd2a9db5d7785ad81c0d572
+PODFILE CHECKSUM: fec483557c026499f368f9ea80534c7eba1678dc
 
 COCOAPODS: 1.11.2

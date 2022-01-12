@@ -18,6 +18,9 @@
 		7166D439278AE7D90028413F /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7166D438278AE7D90028413F /* String+Extension.swift */; };
 		7166D43B278AE8AE0028413F /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7166D43A278AE8AE0028413F /* Date+Extension.swift */; };
 		7166D43D278AEC2C0028413F /* MainViewController+AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7166D43C278AEC2C0028413F /* MainViewController+AddView.swift */; };
+		7166D441278B24930028413F /* MainListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7166D440278B24930028413F /* MainListCollectionViewCell.swift */; };
+		7166D443278B29210028413F /* MainViewController+Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7166D442278B29210028413F /* MainViewController+Collection.swift */; };
+		7166D447278B36C80028413F /* VibrateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7166D446278B36C80028413F /* VibrateManager.swift */; };
 		71BEAA7827896F6A00EF8FE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEAA7727896F6A00EF8FE8 /* AppDelegate.swift */; };
 		71BEAA7A27896F6A00EF8FE8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEAA7927896F6A00EF8FE8 /* SceneDelegate.swift */; };
 		71BEAA7C27896F6A00EF8FE8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEAA7B27896F6A00EF8FE8 /* MainViewController.swift */; };
@@ -27,6 +30,8 @@
 		71BEAA8F27896F6B00EF8FE8 /* OneboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEAA8E27896F6B00EF8FE8 /* OneboardTests.swift */; };
 		71BEAA9927896F6B00EF8FE8 /* OneboardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEAA9827896F6B00EF8FE8 /* OneboardUITests.swift */; };
 		71BEAA9B27896F6B00EF8FE8 /* OneboardUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEAA9A27896F6B00EF8FE8 /* OneboardUITestsLaunchTests.swift */; };
+		71C17FB1278DD17000B840D0 /* ClipboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C17FB0278DD17000B840D0 /* ClipboardManager.swift */; };
+		71C17FB3278F021900B840D0 /* CustomSnackBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C17FB2278F021900B840D0 /* CustomSnackBar.swift */; };
 		D27518053B53D3F76D4729EF /* Pods_Oneboard_OneboardUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 917C26128326AAA9A1EC7CD9 /* Pods_Oneboard_OneboardUITests.framework */; };
 		E9DDB64CFE88BCA3750A3EEB /* Pods_OneboardTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E55A1FF0DA4DE0D5DA4A5E82 /* Pods_OneboardTests.framework */; };
 /* End PBXBuildFile section */
@@ -62,6 +67,9 @@
 		7166D438278AE7D90028413F /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		7166D43A278AE8AE0028413F /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		7166D43C278AEC2C0028413F /* MainViewController+AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+AddView.swift"; sourceTree = "<group>"; };
+		7166D440278B24930028413F /* MainListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListCollectionViewCell.swift; sourceTree = "<group>"; };
+		7166D442278B29210028413F /* MainViewController+Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+Collection.swift"; sourceTree = "<group>"; };
+		7166D446278B36C80028413F /* VibrateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VibrateManager.swift; sourceTree = "<group>"; };
 		71BEAA7427896F6A00EF8FE8 /* Oneboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Oneboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71BEAA7727896F6A00EF8FE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		71BEAA7927896F6A00EF8FE8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -75,6 +83,8 @@
 		71BEAA9427896F6B00EF8FE8 /* OneboardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OneboardUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		71BEAA9827896F6B00EF8FE8 /* OneboardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneboardUITests.swift; sourceTree = "<group>"; };
 		71BEAA9A27896F6B00EF8FE8 /* OneboardUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneboardUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		71C17FB0278DD17000B840D0 /* ClipboardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardManager.swift; sourceTree = "<group>"; };
+		71C17FB2278F021900B840D0 /* CustomSnackBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSnackBar.swift; sourceTree = "<group>"; };
 		880EF7B6E0C3A5F4F13FFDFA /* Pods-Oneboard-OneboardUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Oneboard-OneboardUITests.debug.xcconfig"; path = "Target Support Files/Pods-Oneboard-OneboardUITests/Pods-Oneboard-OneboardUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		917C26128326AAA9A1EC7CD9 /* Pods_Oneboard_OneboardUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Oneboard_OneboardUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5850F5190E806830D2DE29D /* Pods-Oneboard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Oneboard.release.xcconfig"; path = "Target Support Files/Pods-Oneboard/Pods-Oneboard.release.xcconfig"; sourceTree = "<group>"; };
@@ -117,6 +127,7 @@
 				7143410A278977F900F148A0 /* Extension */,
 				714341072789776C00F148A0 /* Delegate */,
 				7166D4242789AFD20028413F /* Model */,
+				7166D445278B36AA0028413F /* Utile */,
 				7166D4252789AFEF0028413F /* DB */,
 				7166D43E278AEFF10028413F /* View */,
 				714341092789778D00F148A0 /* ViewController */,
@@ -193,6 +204,7 @@
 			children = (
 				71BEAA7B27896F6A00EF8FE8 /* MainViewController.swift */,
 				7166D43C278AEC2C0028413F /* MainViewController+AddView.swift */,
+				7166D442278B29210028413F /* MainViewController+Collection.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -209,6 +221,7 @@
 		7166D43E278AEFF10028413F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				71C17FB2278F021900B840D0 /* CustomSnackBar.swift */,
 				7166D43F278AF0080028413F /* Main */,
 			);
 			path = View;
@@ -217,8 +230,18 @@
 		7166D43F278AF0080028413F /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				7166D440278B24930028413F /* MainListCollectionViewCell.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		7166D445278B36AA0028413F /* Utile */ = {
+			isa = PBXGroup;
+			children = (
+				7166D446278B36C80028413F /* VibrateManager.swift */,
+				71C17FB0278DD17000B840D0 /* ClipboardManager.swift */,
+			);
+			path = Utile;
 			sourceTree = "<group>";
 		};
 		71BEAA6B27896F6A00EF8FE8 = {
@@ -533,10 +556,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				7166D43D278AEC2C0028413F /* MainViewController+AddView.swift in Sources */,
+				71C17FB3278F021900B840D0 /* CustomSnackBar.swift in Sources */,
+				7166D441278B24930028413F /* MainListCollectionViewCell.swift in Sources */,
 				71BEAA7C27896F6A00EF8FE8 /* MainViewController.swift in Sources */,
 				7166D43B278AE8AE0028413F /* Date+Extension.swift in Sources */,
+				7166D443278B29210028413F /* MainViewController+Collection.swift in Sources */,
 				7166D431278AC3F00028413F /* AddViewController.swift in Sources */,
 				7166D437278AE14C0028413F /* AddViewController+TextView.swift in Sources */,
+				7166D447278B36C80028413F /* VibrateManager.swift in Sources */,
 				7166D439278AE7D90028413F /* String+Extension.swift in Sources */,
 				71BEAA7827896F6A00EF8FE8 /* AppDelegate.swift in Sources */,
 				71BEAA7A27896F6A00EF8FE8 /* SceneDelegate.swift in Sources */,
@@ -545,6 +572,7 @@
 				7166D4272789B15B0028413F /* Copy.swift in Sources */,
 				7166D433278AC5060028413F /* UIFont+Extension.swift in Sources */,
 				7143410C2789782D00F148A0 /* UIColor+Extension.swift in Sources */,
+				71C17FB1278DD17000B840D0 /* ClipboardManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -724,7 +752,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 93M573XSXL;
+				DEVELOPMENT_TEAM = 792N87PWZU;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Oneboard/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -753,7 +781,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 93M573XSXL;
+				DEVELOPMENT_TEAM = 792N87PWZU;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Oneboard/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

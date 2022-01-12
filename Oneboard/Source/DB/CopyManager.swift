@@ -8,7 +8,7 @@
 import Foundation
 import RealmSwift
 
-class CopyManager {
+final class CopyManager {
     static func append(subject: String?, contents: String) -> Copy.ErrorMessage? {
         if contents.isEmpty {
             return .requireTypeContents
@@ -29,6 +29,24 @@ class CopyManager {
        
         try! Realm().write({
             try! Realm().add(copy)
+        })
+        return nil
+    }
+    
+    static func edit(from copy: Copy, newSubject: String?, newContents: String) -> Copy.ErrorMessage? {
+        if let newSubject = newSubject {
+            if newSubject.count > Copy.RequiredLength.subjectMaximumLength.rawValue {
+                return .tooLongSubject
+            }
+        }
+        
+        if newContents.isEmpty {
+            return .requireTypeContents
+        }
+        
+        try! Realm().write({
+            copy.subject = newSubject
+            copy.contents = newContents
         })
         return nil
     }

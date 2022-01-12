@@ -11,6 +11,11 @@ import RealmSwift
 class Copy: Object {
     enum ErrorMessage: String {
         case requireTypeContents = "내용을 입력해주세요."
+        case tooLongSubject = "제목은 20자 이내로 입력해주세요."
+    }
+    
+    enum RequiredLength: Int {
+        case subjectMaximumLength = 20
     }
     
     @objc dynamic var id: String!
