@@ -22,12 +22,6 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let item = list[indexPath.row]
-        print(item)
-        ClipboardManager.saveToClipboard(text: item.description)
-    }
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 24, left: 0, bottom: 0, right: 0)
     }
@@ -39,6 +33,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
 
 extension MainViewController: MainListCollectionViewCellDelegate {
     func mainListCollectionVIewDidPressed(i: Int) {
+        searchBar.endEditing(true)
         VibrateManager.changeOrSelectVibrate()
         ClipboardManager.saveToClipboard(text: list[i].contents)
         CustomSnackBar.make(in: view, message: "클립보드에 복사되었습니다.", duration: .lengthShort).show()

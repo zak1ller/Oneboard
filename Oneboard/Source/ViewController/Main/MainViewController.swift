@@ -35,10 +35,6 @@ class MainViewController: UIViewController {
         fetchList()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        print(CopyManager.get())
-    }
-    
     override func viewSafeAreaInsetsDidChange() {
         super.viewSafeAreaInsetsDidChange()
     }
@@ -57,6 +53,10 @@ class MainViewController: UIViewController {
         present(vc, animated: true, completion: nil)
     }
     
+    @objc func pressedCollectionView() {
+        searchBar.endEditing(true)
+    }
+    
     func fetchList() {
         list.removeAll()
         CopyManager.get().forEach({ self.list.append($0) })
@@ -71,6 +71,7 @@ class MainViewController: UIViewController {
         addButton.addTarget(self, action: #selector(pressedAddButton), for: .touchUpInside)
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(pressedCollectionView)))
     }
     
 }
