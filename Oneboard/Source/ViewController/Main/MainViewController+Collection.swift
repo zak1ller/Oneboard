@@ -27,12 +27,17 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (UIScreen.main.bounds.width/2)-22, height: 104)
+        return CGSize(width: (UIScreen.main.bounds.width/2)-22, height: 128)
     }
 }
 
 extension MainViewController: MainListCollectionViewCellDelegate {
-    func mainListCollectionVIewDidPressed(i: Int) {
+    func mainListCollectionViewStarButtonPressed(i: Int) {
+        CopyManager.changeForceColor(of: list[i])
+        fetchList()
+    }
+    
+    func mainListCollectionViewDidPressed(i: Int) {
         searchBar.endEditing(true)
         VibrateManager.changeOrSelectVibrate()
         ClipboardManager.saveToClipboard(text: list[i].contents)

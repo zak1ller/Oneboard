@@ -43,6 +43,7 @@ class AddViewController: UIViewController {
         $0.font = UIFont.contents
         $0.textContainerInset = UIEdgeInsets.zero
         $0.textContainer.lineFragmentPadding = 0
+        $0.backgroundColor = .clear
     }
     
     weak var delegate: AddViewControllerDelegate?

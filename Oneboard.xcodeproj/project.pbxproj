@@ -33,6 +33,7 @@
 		71BEAA9B27896F6B00EF8FE8 /* OneboardUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEAA9A27896F6B00EF8FE8 /* OneboardUITestsLaunchTests.swift */; };
 		71C17FB1278DD17000B840D0 /* ClipboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C17FB0278DD17000B840D0 /* ClipboardManager.swift */; };
 		71C17FB3278F021900B840D0 /* CustomSnackBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C17FB2278F021900B840D0 /* CustomSnackBar.swift */; };
+		71C9176F27932E2E00976A2B /* UIImiageVIew+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C9176E27932E2E00976A2B /* UIImiageVIew+Extension.swift */; };
 		D27518053B53D3F76D4729EF /* Pods_Oneboard_OneboardUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 917C26128326AAA9A1EC7CD9 /* Pods_Oneboard_OneboardUITests.framework */; };
 		E9DDB64CFE88BCA3750A3EEB /* Pods_OneboardTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E55A1FF0DA4DE0D5DA4A5E82 /* Pods_OneboardTests.framework */; };
 /* End PBXBuildFile section */
@@ -87,6 +88,7 @@
 		71BEAA9A27896F6B00EF8FE8 /* OneboardUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneboardUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		71C17FB0278DD17000B840D0 /* ClipboardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardManager.swift; sourceTree = "<group>"; };
 		71C17FB2278F021900B840D0 /* CustomSnackBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSnackBar.swift; sourceTree = "<group>"; };
+		71C9176E27932E2E00976A2B /* UIImiageVIew+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImiageVIew+Extension.swift"; sourceTree = "<group>"; };
 		880EF7B6E0C3A5F4F13FFDFA /* Pods-Oneboard-OneboardUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Oneboard-OneboardUITests.debug.xcconfig"; path = "Target Support Files/Pods-Oneboard-OneboardUITests/Pods-Oneboard-OneboardUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		917C26128326AAA9A1EC7CD9 /* Pods_Oneboard_OneboardUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Oneboard_OneboardUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5850F5190E806830D2DE29D /* Pods-Oneboard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Oneboard.release.xcconfig"; path = "Target Support Files/Pods-Oneboard/Pods-Oneboard.release.xcconfig"; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 				7166D432278AC5060028413F /* UIFont+Extension.swift */,
 				7166D438278AE7D90028413F /* String+Extension.swift */,
 				7166D43A278AE8AE0028413F /* Date+Extension.swift */,
+				71C9176E27932E2E00976A2B /* UIImiageVIew+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -566,6 +569,7 @@
 				7166D43B278AE8AE0028413F /* Date+Extension.swift in Sources */,
 				7166D443278B29210028413F /* MainViewController+Collection.swift in Sources */,
 				7166D431278AC3F00028413F /* AddViewController.swift in Sources */,
+				71C9176F27932E2E00976A2B /* UIImiageVIew+Extension.swift in Sources */,
 				7166D437278AE14C0028413F /* AddViewController+TextView.swift in Sources */,
 				7166D447278B36C80028413F /* VibrateManager.swift in Sources */,
 				7166D439278AE7D90028413F /* String+Extension.swift in Sources */,
@@ -762,6 +766,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -791,6 +796,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -24,6 +24,7 @@ class MainViewController: UIViewController {
         cv.translatesAutoresizingMaskIntoConstraints = false
         cv.register(MainListCollectionViewCell.self, forCellWithReuseIdentifier: "MainListCollectionViewCell")
         cv.showsVerticalScrollIndicator = false
+        cv.backgroundColor = .clear
         return cv
     }()
     

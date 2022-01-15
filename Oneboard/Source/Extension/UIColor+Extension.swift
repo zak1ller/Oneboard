@@ -11,8 +11,10 @@ import UIKit
 extension UIColor {
     static let background = UIColor.white
     static let subBackground = UIColor.hexStringToUIColor(hex: "#F0F0F0")
+    static let buttonSub = UIColor.hexStringToUIColor(hex: "#e3e3e3")
     static let main = UIColor.black
     static let divider = UIColor.hexStringToUIColor(hex: "#000000").withAlphaComponent(0.12)
+    static let special = hexStringToUIColor(hex: "#ed8a19")
     
     static func hexStringToUIColor(hex:String) -> UIColor {
         var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()

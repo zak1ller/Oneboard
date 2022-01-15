@@ -9,16 +9,6 @@ import Foundation
 import RealmSwift
 
 final class CopyManager {
-    static func checkIfHave(item copy: Copy, in list: [Copy]) -> Bool {
-        var isContain = false
-        for value in list {
-            if value.id == copy.id {
-                isContain = true
-            }
-        }
-        return isContain
-    }
-    
     static func search(toText text: String) -> [Copy] {
         var results: [Copy] = []
         
@@ -46,6 +36,16 @@ final class CopyManager {
         })
             
         return results
+    }
+    
+    static func checkIfHave(item copy: Copy, in list: [Copy]) -> Bool {
+        var isContain = false
+        for value in list {
+            if value.id == copy.id {
+                isContain = true
+            }
+        }
+        return isContain
     }
     
     static func append(subject: String?, contents: String) -> Copy.ErrorMessage? {
@@ -78,6 +78,16 @@ final class CopyManager {
         return nil
     }
     
+    static func changeForceColor(of item: Copy) {
+        try! Realm().write({
+            if item.isForceColor {
+                item.isForceColor = false
+            } else {
+                item.isForceColor = true
+            }
+        })
+    }
+    
     static func edit(from copy: Copy, newSubject: String?, newContents: String) -> Copy.ErrorMessage? {
         if let newSubject = newSubject {
             if newSubject.count > Copy.RequiredLength.subjectMaximumLength.rawValue {
@@ -103,7 +113,7 @@ final class CopyManager {
     }
     
     static func get() -> Results<Copy> {
-        return try! Realm().objects(Copy.self).sorted(byKeyPath: "createdDate", ascending: false)
+        return try! Realm().objects(Copy.self).sorted(byKeyPath: "createdDate", ascending: false).sorted(byKeyPath: "isForceColor", ascending: false)
     }
     
     static func search(searchText: String) -> Results<Copy> {

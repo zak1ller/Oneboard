@@ -10,7 +10,8 @@ import UIKit
 
 protocol MainListCollectionViewCellDelegate: AnyObject {
     func mainListCollectionViewDidLongPressed(i: Int)
-    func mainListCollectionVIewDidPressed(i: Int)
+    func mainListCollectionViewDidPressed(i: Int)
+    func mainListCollectionViewStarButtonPressed(i: Int)
 }
 
 class MainListCollectionViewCell: UICollectionViewCell {
@@ -18,6 +19,10 @@ class MainListCollectionViewCell: UICollectionViewCell {
         $0.backgroundColor = UIColor.subBackground
         $0.layer.cornerRadius = 16
     })
+    var starImageView = UIImageView().then{
+        $0.image = UIImage(named: "icAllStar")
+    }
+    var startImageButton = UIButton()
     var subjectLabel = UILabel().then{
         $0.textColor = UIColor.darkText
         $0.font = UIFont.title
@@ -25,7 +30,6 @@ class MainListCollectionViewCell: UICollectionViewCell {
     var contentLabel = UILabel().then{
         $0.textColor = UIColor.darkText
         $0.font = UIFont.contents
-        $0.numberOfLines = 1
     }
     
     weak var delegate: MainListCollectionViewCellDelegate?
@@ -42,10 +46,25 @@ class MainListCollectionViewCell: UICollectionViewCell {
     
     override func layoutSubviews() {
         containerView.pin.all()
-        subjectLabel.pin.left(16).right(16).top(to: containerView.edge.top).marginTop(16)
+        starImageView.pin.right(16).top(to: containerView.edge.top).marginTop(16).size(16)
+        startImageButton.pin.left(to: starImageView.edge.left).right(to: starImageView.edge.right).top(to: starImageView.edge.top).bottom(to: starImageView.edge.bottom).size(32)
+        subjectLabel.pin.left(16).right(16).below(of: starImageView).marginTop(8)
         subjectLabel.pin.height(24)
-        contentLabel.pin.below(of: subjectLabel).marginTop(16).sizeToFit()
+        contentLabel.pin.below(of: subjectLabel).marginTop(8).sizeToFit()
         contentLabel.pin.left(16).right(16)
+    }
+    
+    @objc func longPressed() {
+        delegate?.mainListCollectionViewDidLongPressed(i: index)
+    }
+    
+    @objc func pressed() {
+        delegate?.mainListCollectionViewDidPressed(i: index)
+    }
+    
+    @objc func starButtonPressed() {
+        VibrateManager.changeOrSelectVibrate()
+        delegate?.mainListCollectionViewStarButtonPressed(i: index)
     }
     
     func configure(item: Copy) {
@@ -58,22 +77,24 @@ class MainListCollectionViewCell: UICollectionViewCell {
         } else {
             subjectLabel.text = "제목 없음"
         }
+        
         contentLabel.text = item.contents
-    }
-    
-    @objc func longPressed() {
-        delegate?.mainListCollectionViewDidLongPressed(i: index)
-    }
-    
-    @objc func pressed() {
-        delegate?.mainListCollectionVIewDidPressed(i: index)
+        
+        if item.isForceColor {
+            starImageView.setImageColor(color: .special)
+        } else {
+            starImageView.setImageColor(color: .buttonSub)
+        }
     }
     
     func setView() {
         contentView.addSubview(containerView)
         containerView.addSubview(subjectLabel)
         containerView.addSubview(contentLabel)
+        containerView.addSubview(starImageView)
+        containerView.addSubview(startImageButton)
         containerView.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(longPressed)))
         containerView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(pressed)))
+        startImageButton.addTarget(self, action: #selector(starButtonPressed), for: .touchUpInside)
     }
 }
