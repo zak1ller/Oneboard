@@ -28,7 +28,17 @@ class MainViewController: UIViewController {
     }()
     
     var list: [Copy] = []
-    var isSearching = false
+    var isSearching = false {
+        didSet {
+            if isSearching {
+                addButton.setTitle("닫기", for: .normal)
+                clearList()
+            } else {
+                addButton.setTitle("추가", for: .normal)
+                fetchList()
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,13 +59,23 @@ class MainViewController: UIViewController {
     }
     
     @objc func pressedAddButton() {
-        let vc = AddViewController()
-        vc.delegate = self
-        present(vc, animated: true, completion: nil)
+        if isSearching {
+            searchBar.text = nil
+            searchBar.endEditing(true)
+        } else {
+            let vc = AddViewController()
+            vc.delegate = self
+            present(vc, animated: true, completion: nil)
+        }
     }
     
     @objc func pressedCollectionView() {
         searchBar.endEditing(true)
+    }
+    
+    func clearList() {
+        list.removeAll()
+        collectionView.reloadData()
     }
     
     func fetchList() {

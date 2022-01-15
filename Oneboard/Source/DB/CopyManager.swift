@@ -22,10 +22,12 @@ final class CopyManager {
     static func search(toText text: String) -> [Copy] {
         var results: [Copy] = []
         
+        // 100% 일치 항목 검색
         var predic = NSPredicate(format: "subject = %@", text)
         let perfectResults = try! Realm().objects(Copy.self).filter(predic)
         perfectResults.forEach({results.append($0)})
         
+        // ~으로 시작하는 항목 검색
         predic = NSPredicate(format: "subject beginswith %@", text)
         let startResults = try! Realm().objects(Copy.self).filter(predic)
         startResults.forEach({
@@ -34,6 +36,7 @@ final class CopyManager {
             }
         })
         
+        // 포함 되어 있는 항목 검색
         predic = NSPredicate(format: "subject contains %@", text)
         let containResults = try! Realm().objects(Copy.self).filter(predic)
         containResults.forEach({
@@ -41,9 +44,7 @@ final class CopyManager {
                 results.append($0)
             }
         })
-        
-        results.reverse()
-        
+            
         return results
     }
     

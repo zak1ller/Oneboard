@@ -10,10 +10,12 @@ import UIKit
 
 extension MainViewController: UISearchBarDelegate {
     func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
+        isSearching = true
         return true
     }
     
     func searchBarShouldEndEditing(_ searchBar: UISearchBar) -> Bool {
+        isSearching = false
         return true
     }
     
