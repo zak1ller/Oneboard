@@ -21,6 +21,7 @@
 		7166D441278B24930028413F /* MainListCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7166D440278B24930028413F /* MainListCollectionViewCell.swift */; };
 		7166D443278B29210028413F /* MainViewController+Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7166D442278B29210028413F /* MainViewController+Collection.swift */; };
 		7166D447278B36C80028413F /* VibrateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7166D446278B36C80028413F /* VibrateManager.swift */; };
+		7170539D2792986100039917 /* MainViewController+Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7170539C2792986100039917 /* MainViewController+Search.swift */; };
 		71BEAA7827896F6A00EF8FE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEAA7727896F6A00EF8FE8 /* AppDelegate.swift */; };
 		71BEAA7A27896F6A00EF8FE8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEAA7927896F6A00EF8FE8 /* SceneDelegate.swift */; };
 		71BEAA7C27896F6A00EF8FE8 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEAA7B27896F6A00EF8FE8 /* MainViewController.swift */; };
@@ -70,6 +71,7 @@
 		7166D440278B24930028413F /* MainListCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainListCollectionViewCell.swift; sourceTree = "<group>"; };
 		7166D442278B29210028413F /* MainViewController+Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+Collection.swift"; sourceTree = "<group>"; };
 		7166D446278B36C80028413F /* VibrateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VibrateManager.swift; sourceTree = "<group>"; };
+		7170539C2792986100039917 /* MainViewController+Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+Search.swift"; sourceTree = "<group>"; };
 		71BEAA7427896F6A00EF8FE8 /* Oneboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Oneboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71BEAA7727896F6A00EF8FE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		71BEAA7927896F6A00EF8FE8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 				71BEAA7B27896F6A00EF8FE8 /* MainViewController.swift */,
 				7166D43C278AEC2C0028413F /* MainViewController+AddView.swift */,
 				7166D442278B29210028413F /* MainViewController+Collection.swift */,
+				7170539C2792986100039917 /* MainViewController+Search.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -555,6 +558,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7170539D2792986100039917 /* MainViewController+Search.swift in Sources */,
 				7166D43D278AEC2C0028413F /* MainViewController+AddView.swift in Sources */,
 				71C17FB3278F021900B840D0 /* CustomSnackBar.swift in Sources */,
 				7166D441278B24930028413F /* MainListCollectionViewCell.swift in Sources */,

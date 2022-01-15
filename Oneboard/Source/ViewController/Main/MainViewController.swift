@@ -28,6 +28,7 @@ class MainViewController: UIViewController {
     }()
     
     var list: [Copy] = []
+    var isSearching = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,6 +69,7 @@ class MainViewController: UIViewController {
         view.addSubview(addButton)
         view.addSubview(searchBar)
         view.addSubview(collectionView)
+        searchBar.delegate = self
         addButton.addTarget(self, action: #selector(pressedAddButton), for: .touchUpInside)
         collectionView.delegate = self
         collectionView.dataSource = self

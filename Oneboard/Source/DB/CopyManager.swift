@@ -9,6 +9,44 @@ import Foundation
 import RealmSwift
 
 final class CopyManager {
+    static func checkIfHave(item copy: Copy, in list: [Copy]) -> Bool {
+        var isContain = false
+        for value in list {
+            if value.id == copy.id {
+                isContain = true
+            }
+        }
+        return isContain
+    }
+    
+    static func search(toText text: String) -> [Copy] {
+        var results: [Copy] = []
+        
+        var predic = NSPredicate(format: "subject = %@", text)
+        let perfectResults = try! Realm().objects(Copy.self).filter(predic)
+        perfectResults.forEach({results.append($0)})
+        
+        predic = NSPredicate(format: "subject beginswith %@", text)
+        let startResults = try! Realm().objects(Copy.self).filter(predic)
+        startResults.forEach({
+            if !checkIfHave(item: $0, in: results) {
+                results.append($0)
+            }
+        })
+        
+        predic = NSPredicate(format: "subject contains %@", text)
+        let containResults = try! Realm().objects(Copy.self).filter(predic)
+        containResults.forEach({
+            if !checkIfHave(item: $0, in: results) {
+                results.append($0)
+            }
+        })
+        
+        results.reverse()
+        
+        return results
+    }
+    
     static func append(subject: String?, contents: String) -> Copy.ErrorMessage? {
         if let subject = subject {
             if subject.count > Copy.RequiredLength.subjectMaximumLength.rawValue {
