@@ -7,6 +7,7 @@
 
 import Foundation
 import RealmSwift
+import IceCream
 
 class Copy: Object {
     enum ErrorMessage: String {
@@ -23,4 +24,13 @@ class Copy: Object {
     @objc dynamic var contents: String!
     @objc dynamic var isForceColor = false
     @objc dynamic var createdDate: String!
+    @objc dynamic var isDeleted = false
+    
+    override class func primaryKey() -> String? {
+        return "id"
+    }
+}
+
+extension Copy: CKRecordConvertible & CKRecordRecoverable {
+    // Leave it blank is all
 }

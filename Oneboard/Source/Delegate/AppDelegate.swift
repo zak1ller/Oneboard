@@ -9,15 +9,24 @@ import UIKit
 import RealmSwift
 import Then
 import PinLayout
+import IceCream
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+    var syncEngine: SyncEngine?
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Configuration Realm
         let config = Realm.Configuration(
         schemaVersion: 1,
         migrationBlock: { migration, oldSchemaVersion in })
         Realm.Configuration.defaultConfiguration = config
+        
+        // Sync realm cloukit
+        syncEngine = SyncEngine(objects: [ SyncObject(type: Copy.self) ])
+        application.registerForRemoteNotifications()
+    
         return true
     }
 

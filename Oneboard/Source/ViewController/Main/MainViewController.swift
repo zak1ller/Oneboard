@@ -44,7 +44,13 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setView()
+        
         fetchList()
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+2, execute: {
+            self.fetchList()
+        })
+        
+//        Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(fetchList), userInfo: nil, repeats: true)
     }
     
     override func viewSafeAreaInsetsDidChange() {
@@ -79,7 +85,7 @@ class MainViewController: UIViewController {
         collectionView.reloadData()
     }
     
-    func fetchList() {
+    @objc func fetchList() {
         list.removeAll()
         CopyManager.get().forEach({ self.list.append($0) })
         collectionView.reloadData()

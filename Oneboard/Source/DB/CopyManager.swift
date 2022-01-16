@@ -108,12 +108,12 @@ final class CopyManager {
     
     static func remove(copy: Copy) {
         try! Realm().write({
-            try! Realm().delete(copy)
+            copy.isDeleted = true
         })
     }
     
     static func get() -> Results<Copy> {
-        return try! Realm().objects(Copy.self).sorted(byKeyPath: "createdDate", ascending: false).sorted(byKeyPath: "isForceColor", ascending: false)
+        return try! Realm().objects(Copy.self).sorted(byKeyPath: "createdDate", ascending: false).sorted(byKeyPath: "isForceColor", ascending: false).filter("isDeleted = false")
     }
     
     static func search(searchText: String) -> Results<Copy> {
