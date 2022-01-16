@@ -9,35 +9,6 @@ import Foundation
 import RealmSwift
 
 final class CopyManager {
-    static func search(toText text: String) -> [Copy] {
-        var results: [Copy] = []
-        
-        // 100% 일치 항목 검색
-        var predic = NSPredicate(format: "subject = %@", text)
-        let perfectResults = try! Realm().objects(Copy.self).filter(predic)
-        perfectResults.forEach({results.append($0)})
-        
-        // ~으로 시작하는 항목 검색
-        predic = NSPredicate(format: "subject beginswith %@", text)
-        let startResults = try! Realm().objects(Copy.self).filter(predic)
-        startResults.forEach({
-            if !checkIfHave(item: $0, in: results) {
-                results.append($0)
-            }
-        })
-        
-        // 포함 되어 있는 항목 검색
-        predic = NSPredicate(format: "subject contains %@", text)
-        let containResults = try! Realm().objects(Copy.self).filter(predic)
-        containResults.forEach({
-            if !checkIfHave(item: $0, in: results) {
-                results.append($0)
-            }
-        })
-            
-        return results
-    }
-    
     static func checkIfHave(item copy: Copy, in list: [Copy]) -> Bool {
         var isContain = false
         for value in list {
@@ -116,8 +87,32 @@ final class CopyManager {
         return try! Realm().objects(Copy.self).sorted(byKeyPath: "createdDate", ascending: false).sorted(byKeyPath: "isForceColor", ascending: false).filter("isDeleted = false")
     }
     
-    static func search(searchText: String) -> Results<Copy> {
-        let predic = NSPredicate(format: "contents CONTAIN %@", searchText)
-        return try! Realm().objects(Copy.self).filter(predic).sorted(byKeyPath: "createdDate", ascending: false)
+    static func search(toText text: String) -> [Copy] {
+        var results: [Copy] = []
+        
+        // 100% 일치 항목 검색
+        var predic = NSPredicate(format: "subject = %@", text)
+        let perfectResults = try! Realm().objects(Copy.self).filter(predic).filter("isDeleted = false")
+        perfectResults.forEach({results.append($0)})
+        
+        // ~으로 시작하는 항목 검색
+        predic = NSPredicate(format: "subject beginswith %@", text)
+        let startResults = try! Realm().objects(Copy.self).filter(predic).filter("isDeleted = false")
+        startResults.forEach({
+            if !checkIfHave(item: $0, in: results) {
+                results.append($0)
+            }
+        })
+        
+        // 포함 되어 있는 항목 검색
+        predic = NSPredicate(format: "subject contains %@", text)
+        let containResults = try! Realm().objects(Copy.self).filter(predic).filter("isDeleted = false")
+        containResults.forEach({
+            if !checkIfHave(item: $0, in: results) {
+                results.append($0)
+            }
+        })
+            
+        return results
     }
 }
