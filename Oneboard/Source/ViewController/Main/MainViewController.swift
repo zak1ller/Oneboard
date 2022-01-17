@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CloudKit
 
 class MainViewController: UIViewController {
     var addButton = UIButton(type: .system).then{
@@ -44,13 +45,10 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setView()
-        
         fetchList()
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+2, execute: {
             self.fetchList()
         })
-        
-//        Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(fetchList), userInfo: nil, repeats: true)
     }
     
     override func viewSafeAreaInsetsDidChange() {

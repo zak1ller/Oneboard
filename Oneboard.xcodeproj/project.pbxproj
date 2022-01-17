@@ -34,6 +34,7 @@
 		71C17FB1278DD17000B840D0 /* ClipboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C17FB0278DD17000B840D0 /* ClipboardManager.swift */; };
 		71C17FB3278F021900B840D0 /* CustomSnackBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C17FB2278F021900B840D0 /* CustomSnackBar.swift */; };
 		71C9176F27932E2E00976A2B /* UIImiageVIew+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C9176E27932E2E00976A2B /* UIImiageVIew+Extension.swift */; };
+		71D2FA4927958C5400C62951 /* UIAlertController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D2FA4827958C5400C62951 /* UIAlertController+Extension.swift */; };
 		9C73F55EB6CC6970C2EAC979 /* Pods_OneboardTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01A57AED0226F8937F9F1B85 /* Pods_OneboardTests.framework */; };
 		AF7531275016E3B18B216911 /* Pods_Oneboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FA472E5FE6528AEAAE7801B /* Pods_Oneboard.framework */; };
 		D82FDA75DF1A23B0B0993557 /* Pods_Oneboard_OneboardUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7B633FB09BFC989A10E7A04 /* Pods_Oneboard_OneboardUITests.framework */; };
@@ -92,6 +93,7 @@
 		71C17FB0278DD17000B840D0 /* ClipboardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardManager.swift; sourceTree = "<group>"; };
 		71C17FB2278F021900B840D0 /* CustomSnackBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSnackBar.swift; sourceTree = "<group>"; };
 		71C9176E27932E2E00976A2B /* UIImiageVIew+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImiageVIew+Extension.swift"; sourceTree = "<group>"; };
+		71D2FA4827958C5400C62951 /* UIAlertController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extension.swift"; sourceTree = "<group>"; };
 		7470507430A289F40297F9FE /* Pods-Oneboard-OneboardUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Oneboard-OneboardUITests.release.xcconfig"; path = "Target Support Files/Pods-Oneboard-OneboardUITests/Pods-Oneboard-OneboardUITests.release.xcconfig"; sourceTree = "<group>"; };
 		755257F90D7AE39E15D06617 /* Pods-Oneboard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Oneboard.release.xcconfig"; path = "Target Support Files/Pods-Oneboard/Pods-Oneboard.release.xcconfig"; sourceTree = "<group>"; };
 		8FA472E5FE6528AEAAE7801B /* Pods_Oneboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Oneboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -188,6 +190,7 @@
 				7166D438278AE7D90028413F /* String+Extension.swift */,
 				7166D43A278AE8AE0028413F /* Date+Extension.swift */,
 				71C9176E27932E2E00976A2B /* UIImiageVIew+Extension.swift */,
+				71D2FA4827958C5400C62951 /* UIAlertController+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -582,6 +585,7 @@
 				71BEAA7827896F6A00EF8FE8 /* AppDelegate.swift in Sources */,
 				71BEAA7A27896F6A00EF8FE8 /* SceneDelegate.swift in Sources */,
 				7166D42B2789DFB80028413F /* CopyManager.swift in Sources */,
+				71D2FA4927958C5400C62951 /* UIAlertController+Extension.swift in Sources */,
 				7166D42F278A0AB90028413F /* UIButton+Extension.swift in Sources */,
 				7166D4272789B15B0028413F /* Copy.swift in Sources */,
 				7166D433278AC5060028413F /* UIFont+Extension.swift in Sources */,

@@ -27,6 +27,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        print(CGSize(width: (UIScreen.main.bounds.width/2)-22, height: 128))
         return CGSize(width: (UIScreen.main.bounds.width/2)-22, height: 128)
     }
 }
@@ -60,7 +61,7 @@ extension MainViewController: MainListCollectionViewCellDelegate {
             }
         }
         
-        let alert = UIAlertController(title: subject, message: nil, preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: subject, message: nil, preferredStyle: UIAlertController.actionSheetForiPad)
         alert.addAction(UIAlertAction(title: "취소", style: .cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "편집", style: .default, handler: { _ in
             self.editCopy(item: item)
