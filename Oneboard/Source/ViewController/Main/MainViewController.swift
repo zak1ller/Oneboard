@@ -9,12 +9,12 @@ import UIKit
 import CloudKit
 
 class MainViewController: UIViewController {
-    var addButton = UIButton(type: .system).then{
+    let addButton = UIButton(type: .system).then{
         $0.setTitle("추가", for: .normal)
         $0.setTitleColor(UIColor.darkText, for: .normal)
         $0.titleLabel?.font = UIFont.textButton
     }
-    var searchBar = UISearchBar().then{
+    let searchBar = UISearchBar().then{
         $0.tintColor = UIColor.darkText
         $0.searchBarStyle = .minimal
     }
@@ -28,8 +28,16 @@ class MainViewController: UIViewController {
         cv.backgroundColor = .clear
         return cv
     }()
+    let placeHolderLabel = UILabel().then{
+        $0.text = "목록이 비어있습니다.\n복사할 항목을 새롭게 추가해보세요."
+        $0.textColor = .lightGray
+        $0.textAlignment = .center
+        $0.font = .contents
+        $0.numberOfLines = 0
+    }
     
     var list: [Copy] = []
+    
     var isSearching = false {
         didSet {
             if isSearching {
@@ -38,6 +46,17 @@ class MainViewController: UIViewController {
             } else {
                 addButton.setTitle("추가", for: .normal)
                 fetchList()
+            }
+        }
+    }
+    
+    var isEmptyList = true {
+        didSet {
+            print(isEmptyList)
+            if isEmptyList {
+                placeHolderLabel.isHidden = false
+            } else {
+                placeHolderLabel.isHidden = true
             }
         }
     }
@@ -61,6 +80,7 @@ class MainViewController: UIViewController {
         addButton.pin.height(48)
         searchBar.pin.top(view.pin.safeArea.top+16).left(16).before(of: addButton).right(16).height(48)
         collectionView.pin.left(16).right(16).below(of: searchBar).marginTop(16).bottom(view.pin.safeArea.bottom)
+        placeHolderLabel.pin.left(16).right(16).vCenter().height(200)
     }
     
     @objc func pressedAddButton() {
@@ -87,6 +107,14 @@ class MainViewController: UIViewController {
         list.removeAll()
         CopyManager.get().forEach({ self.list.append($0) })
         collectionView.reloadData()
+        
+        // 일반 목록에서 목록의 아이템 개수가 0인 경우 Place holder를 배치함
+        isEmptyList = false
+        if !isSearching {
+            if list.isEmpty {
+                isEmptyList = true
+            }
+        }
     }
     
     func setView() {
@@ -94,6 +122,8 @@ class MainViewController: UIViewController {
         view.addSubview(addButton)
         view.addSubview(searchBar)
         view.addSubview(collectionView)
+        view.addSubview(placeHolderLabel)
+        
         searchBar.delegate = self
         addButton.addTarget(self, action: #selector(pressedAddButton), for: .touchUpInside)
         collectionView.delegate = self
