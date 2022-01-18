@@ -17,6 +17,7 @@ DEPENDENCIES:
   - PinLayout
   - RealmSwift (= 10.7.7)
   - SnackBar.swift
+  - SnapKit
   - Then
 
 SPEC REPOS:
@@ -38,6 +39,6 @@ SPEC CHECKSUMS:
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   Then: acfe0be7e98221c6204e12f8161459606d5d822d
 
-PODFILE CHECKSUM: efe4f8aa789a7ae5e8a30e36115a911db35e0fb5
+PODFILE CHECKSUM: 6e529a9a4d9aba953483cb8ea8179d7dcc4e472a
 
 COCOAPODS: 1.11.2

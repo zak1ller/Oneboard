@@ -11,6 +11,7 @@ target 'Oneboard' do
   pod 'PinLayout'
   pod 'SnackBar.swift'
   pod 'IceCream'
+  pod 'SnapKit'
 
   target 'OneboardTests' do
     inherit! :search_paths

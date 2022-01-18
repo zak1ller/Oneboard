@@ -22,7 +22,7 @@ class MainListCollectionViewCell: UICollectionViewCell {
     var starImageView = UIImageView().then{
         $0.image = UIImage(named: "icAllStar")
     }
-    var startImageButton = UIButton()
+    var starImageButton = UIButton()
     var subjectLabel = UILabel().then{
         $0.textColor = UIColor.darkText
         $0.font = UIFont.title
@@ -47,7 +47,7 @@ class MainListCollectionViewCell: UICollectionViewCell {
     override func layoutSubviews() {
         containerView.pin.all()
         starImageView.pin.right(16).top(to: containerView.edge.top).marginTop(16).size(16)
-        startImageButton.pin.left(to: starImageView.edge.left).right(to: starImageView.edge.right).top(to: starImageView.edge.top).bottom(to: starImageView.edge.bottom).size(32)
+        starImageButton.pin.left(to: starImageView.edge.left).right(to: starImageView.edge.right).top(to: starImageView.edge.top).bottom(to: starImageView.edge.bottom).size(32)
         subjectLabel.pin.left(16).right(16).below(of: starImageView).marginTop(8)
         subjectLabel.pin.height(24)
         contentLabel.pin.below(of: subjectLabel).marginTop(8).sizeToFit()
@@ -92,9 +92,9 @@ class MainListCollectionViewCell: UICollectionViewCell {
         containerView.addSubview(subjectLabel)
         containerView.addSubview(contentLabel)
         containerView.addSubview(starImageView)
-        containerView.addSubview(startImageButton)
+        containerView.addSubview(starImageButton)
         containerView.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(longPressed)))
         containerView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(pressed)))
-        startImageButton.addTarget(self, action: #selector(starButtonPressed), for: .touchUpInside)
+        starImageButton.addTarget(self, action: #selector(starButtonPressed), for: .touchUpInside)
     }
 }
