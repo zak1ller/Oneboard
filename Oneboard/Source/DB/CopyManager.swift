@@ -9,6 +9,7 @@ import Foundation
 import RealmSwift
 
 final class CopyManager {
+    
     static func checkIfHave(item copy: Copy, in list: [Copy]) -> Bool {
         var isContain = false
         for value in list {
@@ -33,7 +34,7 @@ final class CopyManager {
         let copy = Copy()
         copy.subject = subject
         copy.contents = contents
-        copy.id = String.randomString(of: 12)
+        copy.id = String.randomString(of: 32)
         copy.createdDate = Date.currentDateString()
         
         var predic = NSPredicate(format: "id == %@", copy.id)

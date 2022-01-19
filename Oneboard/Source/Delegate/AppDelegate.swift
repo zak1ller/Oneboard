@@ -20,12 +20,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Configuration Realm
         let config = Realm.Configuration(
-        schemaVersion: 1,
+        schemaVersion: 2,
         migrationBlock: { migration, oldSchemaVersion in })
         Realm.Configuration.defaultConfiguration = config
         
         // Sync realm cloukit
-        syncEngine = SyncEngine(objects: [ SyncObject(type: Copy.self) ])
+        syncEngine = SyncEngine(objects: [
+            SyncObject(type: Copy.self),
+            SyncObject(type: Clipboard.self)
+        ])
         application.registerForRemoteNotifications()
     
         return true

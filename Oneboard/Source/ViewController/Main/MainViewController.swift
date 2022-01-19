@@ -9,6 +9,7 @@ import UIKit
 import CloudKit
 
 class MainViewController: UIViewController {
+    
     let addButton = UIButton(type: .system).then{
         $0.setTitle("추가", for: .normal)
         $0.setTitleColor(UIColor.darkText, for: .normal)
@@ -52,7 +53,6 @@ class MainViewController: UIViewController {
     
     var isEmptyList = true {
         didSet {
-            print(isEmptyList)
             if isEmptyList {
                 placeHolderLabel.isHidden = false
             } else {
@@ -72,6 +72,10 @@ class MainViewController: UIViewController {
     
     override func viewSafeAreaInsetsDidChange() {
         super.viewSafeAreaInsetsDidChange()
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        collectionView.collectionViewLayout.invalidateLayout()
     }
     
     override func viewDidLayoutSubviews() {

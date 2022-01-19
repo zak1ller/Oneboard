@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		71258F4F279700CF006D7237 /* ClipboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71258F4E279700CF006D7237 /* ClipboardViewController.swift */; };
+		71258F522797135B006D7237 /* ClipboardListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71258F512797135B006D7237 /* ClipboardListCell.swift */; };
+		71258F54279843F8006D7237 /* Clipboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71258F53279843F8006D7237 /* Clipboard.swift */; };
+		71258F5627984F70006D7237 /* ClipboardViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71258F5527984F70006D7237 /* ClipboardViewController+TableView.swift */; };
 		7143410C2789782D00F148A0 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7143410B2789782D00F148A0 /* UIColor+Extension.swift */; };
 		7166D4272789B15B0028413F /* Copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7166D4262789B15B0028413F /* Copy.swift */; };
 		7166D42B2789DFB80028413F /* CopyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7166D42A2789DFB80028413F /* CopyManager.swift */; };
@@ -60,6 +64,10 @@
 		01A57AED0226F8937F9F1B85 /* Pods_OneboardTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OneboardTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CBD9A24391E018286DE1121 /* Pods-OneboardTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneboardTests.release.xcconfig"; path = "Target Support Files/Pods-OneboardTests/Pods-OneboardTests.release.xcconfig"; sourceTree = "<group>"; };
 		10AC866AD49D5DA511FCF20C /* Pods-OneboardTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OneboardTests.debug.xcconfig"; path = "Target Support Files/Pods-OneboardTests/Pods-OneboardTests.debug.xcconfig"; sourceTree = "<group>"; };
+		71258F4E279700CF006D7237 /* ClipboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardViewController.swift; sourceTree = "<group>"; };
+		71258F512797135B006D7237 /* ClipboardListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardListCell.swift; sourceTree = "<group>"; };
+		71258F53279843F8006D7237 /* Clipboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Clipboard.swift; sourceTree = "<group>"; };
+		71258F5527984F70006D7237 /* ClipboardViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ClipboardViewController+TableView.swift"; sourceTree = "<group>"; };
 		7143410B2789782D00F148A0 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		7166D4262789B15B0028413F /* Copy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Copy.swift; sourceTree = "<group>"; };
 		7166D42A2789DFB80028413F /* CopyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyManager.swift; sourceTree = "<group>"; };
@@ -129,6 +137,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		71258F4D279700BF006D7237 /* Clipboard */ = {
+			isa = PBXGroup;
+			children = (
+				71258F4E279700CF006D7237 /* ClipboardViewController.swift */,
+				71258F5527984F70006D7237 /* ClipboardViewController+TableView.swift */,
+			);
+			path = Clipboard;
+			sourceTree = "<group>";
+		};
+		71258F5027971346006D7237 /* Clipboard */ = {
+			isa = PBXGroup;
+			children = (
+				71258F512797135B006D7237 /* ClipboardListCell.swift */,
+			);
+			path = Clipboard;
+			sourceTree = "<group>";
+		};
 		714341052789775800F148A0 /* Source */ = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +163,7 @@
 				7166D445278B36AA0028413F /* Utile */,
 				7166D4252789AFEF0028413F /* DB */,
 				7166D43E278AEFF10028413F /* View */,
+				71258F5027971346006D7237 /* Clipboard */,
 				714341092789778D00F148A0 /* ViewController */,
 			);
 			path = Source;
@@ -174,6 +200,7 @@
 			children = (
 				7166D434278AE1320028413F /* Main */,
 				7166D435278AE1380028413F /* Add */,
+				71258F4D279700BF006D7237 /* Clipboard */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -196,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				7166D4262789B15B0028413F /* Copy.swift */,
+				71258F53279843F8006D7237 /* Clipboard.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -567,6 +595,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7170539D2792986100039917 /* MainViewController+Search.swift in Sources */,
+				71258F4F279700CF006D7237 /* ClipboardViewController.swift in Sources */,
 				7166D43D278AEC2C0028413F /* MainViewController+AddView.swift in Sources */,
 				71C17FB3278F021900B840D0 /* CustomSnackBar.swift in Sources */,
 				7166D441278B24930028413F /* MainListCollectionViewCell.swift in Sources */,
@@ -583,10 +612,13 @@
 				7166D42B2789DFB80028413F /* CopyManager.swift in Sources */,
 				71D2FA4927958C5400C62951 /* UIAlertController+Extension.swift in Sources */,
 				7166D42F278A0AB90028413F /* UIButton+Extension.swift in Sources */,
+				71258F54279843F8006D7237 /* Clipboard.swift in Sources */,
 				7166D4272789B15B0028413F /* Copy.swift in Sources */,
+				71258F522797135B006D7237 /* ClipboardListCell.swift in Sources */,
 				7166D433278AC5060028413F /* UIFont+Extension.swift in Sources */,
 				7143410C2789782D00F148A0 /* UIColor+Extension.swift in Sources */,
 				71C17FB1278DD17000B840D0 /* ClipboardManager.swift in Sources */,
+				71258F5627984F70006D7237 /* ClipboardViewController+TableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

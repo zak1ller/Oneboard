@@ -11,13 +11,24 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
-                
+        
+        let mainViewController = MainViewController()
+        mainViewController.tabBarItem = UITabBarItem(title: "목록", image: UIImage(systemName: "list.bullet.circle"), selectedImage: nil)
+        
+        let clipboardViewController = ClipboardViewController()
+        clipboardViewController.tabBarItem = UITabBarItem(title: "클립보드", image: UIImage(systemName: "paperclip.circle"), selectedImage: nil)
+        
+        let tabBarController = UITabBarController()
+        tabBarController.viewControllers = [mainViewController, clipboardViewController]
+        tabBarController.tabBar.tintColor = .darkText
+        tabBarController.tabBar.backgroundColor = .background
+        
         let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = MainViewController() //
+        window.rootViewController = tabBarController
         window.makeKeyAndVisible()
+        
         self.window = window
     }
 
@@ -29,6 +40,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
     func sceneDidBecomeActive(_ scene: UIScene) {
+        ClipboardManager.append()
         // Called when the scene has moved from an inactive state to an active state.
         // Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.
     }

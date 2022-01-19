@@ -27,7 +27,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (UIScreen.main.bounds.width/2)-22, height: 128)
+        return CGSize(width: (UIScreen.main.bounds.width/2)-24, height: 128)
     }
 }
 
