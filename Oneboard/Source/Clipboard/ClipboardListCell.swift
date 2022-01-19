@@ -38,6 +38,7 @@ class ClipboardListCell: UITableViewCell {
     }
     
     @objc func viewLongPressed() {
+        VibrateManager.changeOrSelectVibrate()
         longClick?()
     }
     

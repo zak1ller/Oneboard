@@ -30,9 +30,23 @@ class ClipboardViewController: UIViewController {
         super.viewDidLoad()
         setView()
         setConsraint()
-        fetchClipboards()
     }
   
+    override func viewWillAppear(_ animated: Bool) {
+        ClipboardManager.append()
+        fetchClipboards()
+    }
+    
+    @objc func removeAllButtonPressed() {
+        let alert = UIAlertController(title: "클립보드에 저장 된 모든 항목을 삭제합니다.", message: nil, preferredStyle: UIAlertController.actionSheetForiPad)
+        alert.addAction(UIAlertAction(title: "취소", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "삭제", style: .destructive, handler: { _ in
+            ClipboardManager.removeAll()
+            self.fetchClipboards()
+        }))
+        present(alert, animated: true, completion: nil)
+    }
+    
     func fetchClipboards() {
         clipboards.removeAll()
         
@@ -49,6 +63,7 @@ class ClipboardViewController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
+        removeButton.addTarget(self, action: #selector(removeAllButtonPressed), for: .touchUpInside)
     }
     
     func setConsraint() {

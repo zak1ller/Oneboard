@@ -24,6 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         tabBarController.viewControllers = [mainViewController, clipboardViewController]
         tabBarController.tabBar.tintColor = .darkText
         tabBarController.tabBar.backgroundColor = .background
+        tabBarController.delegate = self
         
         let window = UIWindow(windowScene: windowScene)
         window.rootViewController = tabBarController
@@ -41,8 +42,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func sceneDidBecomeActive(_ scene: UIScene) {
         ClipboardManager.append()
-        // Called when the scene has moved from an inactive state to an active state.
-        // Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.
     }
 
     func sceneWillResignActive(_ scene: UIScene) {
@@ -62,5 +61,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
 
+}
+
+extension SceneDelegate: UITabBarControllerDelegate {
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        VibrateManager.changeOrSelectVibrate()
+    }
 }
 
