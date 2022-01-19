@@ -31,5 +31,10 @@ extension ClipboardViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        VibrateManager.changeOrSelectVibrate()
+        ClipboardManager.saveToClipboard(text: clipboards[indexPath.row].contents)
+        CustomSnackBar.make(in: view, message: "클립보드에 복사되었습니다.", duration: .lengthShort).show()
+    }
     
 }
