@@ -34,6 +34,8 @@ class ClipboardViewController: UIViewController {
     }
   
     func fetchClipboards() {
+        clipboards.removeAll()
+        
         ClipboardManager.getList().forEach{
             self.clipboards.append($0)
         }

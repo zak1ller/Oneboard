@@ -21,8 +21,10 @@ class ClipboardListCell: UITableViewCell {
     lazy var contentsLabel = UILabel().then{
         $0.textColor = .darkText
         $0.font = .contents
-        $0.numberOfLines = 0
+        $0.numberOfLines = 20
     }
+    
+    var longClick: (() -> ())?
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -35,10 +37,16 @@ class ClipboardListCell: UITableViewCell {
         setConstraint()
     }
     
+    @objc func viewLongPressed() {
+        longClick?()
+    }
+    
     func setView() {
         contentView.addSubview(containerView)
         containerView.addSubview(dateLabel)
         containerView.addSubview(contentsLabel)
+        
+        containerView.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(viewLongPressed)))
     }
     
     func setConstraint() {

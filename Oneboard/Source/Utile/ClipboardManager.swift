@@ -38,6 +38,20 @@ final class ClipboardManager {
         }
     }
     
+    static func remove(_ clipboard: Clipboard) {
+        try! Realm().write{
+            clipboard.isDeleted = true
+        }
+    }
+    
+    static func removeAll() {
+        try! Realm().write{
+            getList().forEach{
+                $0.isDeleted = true
+            }
+        }
+    }
+    
     static func getList() -> Results<Clipboard> {
         return try! Realm().objects(Clipboard.self).sorted(byKeyPath: "createdDate", ascending: false).filter("isDeleted = false")
     }
