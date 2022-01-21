@@ -46,7 +46,6 @@ class ClipboardListCell: UITableViewCell {
         contentView.addSubview(containerView)
         containerView.addSubview(dateLabel)
         containerView.addSubview(contentsLabel)
-        
         containerView.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(viewLongPressed)))
     }
     
@@ -71,7 +70,9 @@ class ClipboardListCell: UITableViewCell {
     }
     
     func configure(_ clipboard: Clipboard) {
-        dateLabel.text = clipboard.createdDate
+        let date = Date.stringToDate(clipboard.createdDate)
+        let dateString = Date.dateToString(date)
+        dateLabel.text = dateString
         contentsLabel.text = clipboard.contents
     }
 }
