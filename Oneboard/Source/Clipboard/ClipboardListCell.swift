@@ -16,7 +16,7 @@ class ClipboardListCell: UITableViewCell {
     }
     lazy var dateLabel = UILabel().then{
         $0.textColor = .lightGray
-        $0.font = .miniTitle
+        $0.font = .date
     }
     lazy var contentsLabel = UILabel().then{
         $0.textColor = .darkText

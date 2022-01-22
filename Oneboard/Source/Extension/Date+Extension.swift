@@ -23,7 +23,8 @@ extension Date {
     
     static func dateToString(_ date: Date) -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd MMM EEEE"
+        dateFormatter.dateFormat = "dd MMM EEEE HH:mm:ss"
         return dateFormatter.string(from: date)
     }
 }
+

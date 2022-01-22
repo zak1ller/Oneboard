@@ -9,9 +9,9 @@ target 'Oneboard' do
   pod 'RealmSwift', '10.7.7'
   pod 'Then'
   pod 'PinLayout'
-  pod 'SnackBar.swift'
   pod 'IceCream'
   pod 'SnapKit'
+  pod 'Toast-Swift'
 
   target 'OneboardTests' do
     inherit! :search_paths

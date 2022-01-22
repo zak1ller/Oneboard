@@ -35,7 +35,6 @@
 		71BEAA9927896F6B00EF8FE8 /* OneboardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEAA9827896F6B00EF8FE8 /* OneboardUITests.swift */; };
 		71BEAA9B27896F6B00EF8FE8 /* OneboardUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEAA9A27896F6B00EF8FE8 /* OneboardUITestsLaunchTests.swift */; };
 		71C17FB1278DD17000B840D0 /* ClipboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C17FB0278DD17000B840D0 /* ClipboardManager.swift */; };
-		71C17FB3278F021900B840D0 /* CustomSnackBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C17FB2278F021900B840D0 /* CustomSnackBar.swift */; };
 		71C9176F27932E2E00976A2B /* UIImiageVIew+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C9176E27932E2E00976A2B /* UIImiageVIew+Extension.swift */; };
 		71D2FA4927958C5400C62951 /* UIAlertController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D2FA4827958C5400C62951 /* UIAlertController+Extension.swift */; };
 		9C73F55EB6CC6970C2EAC979 /* Pods_OneboardTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01A57AED0226F8937F9F1B85 /* Pods_OneboardTests.framework */; };
@@ -97,7 +96,6 @@
 		71BEAA9827896F6B00EF8FE8 /* OneboardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneboardUITests.swift; sourceTree = "<group>"; };
 		71BEAA9A27896F6B00EF8FE8 /* OneboardUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneboardUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		71C17FB0278DD17000B840D0 /* ClipboardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipboardManager.swift; sourceTree = "<group>"; };
-		71C17FB2278F021900B840D0 /* CustomSnackBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSnackBar.swift; sourceTree = "<group>"; };
 		71C9176E27932E2E00976A2B /* UIImiageVIew+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImiageVIew+Extension.swift"; sourceTree = "<group>"; };
 		71D2FA4827958C5400C62951 /* UIAlertController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extension.swift"; sourceTree = "<group>"; };
 		7470507430A289F40297F9FE /* Pods-Oneboard-OneboardUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Oneboard-OneboardUITests.release.xcconfig"; path = "Target Support Files/Pods-Oneboard-OneboardUITests/Pods-Oneboard-OneboardUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -259,7 +257,6 @@
 		7166D43E278AEFF10028413F /* View */ = {
 			isa = PBXGroup;
 			children = (
-				71C17FB2278F021900B840D0 /* CustomSnackBar.swift */,
 				7166D43F278AF0080028413F /* Main */,
 			);
 			path = View;
@@ -597,7 +594,6 @@
 				7170539D2792986100039917 /* MainViewController+Search.swift in Sources */,
 				71258F4F279700CF006D7237 /* ClipboardViewController.swift in Sources */,
 				7166D43D278AEC2C0028413F /* MainViewController+AddView.swift in Sources */,
-				71C17FB3278F021900B840D0 /* CustomSnackBar.swift in Sources */,
 				7166D441278B24930028413F /* MainListCollectionViewCell.swift in Sources */,
 				71BEAA7C27896F6A00EF8FE8 /* MainViewController.swift in Sources */,
 				7166D43B278AE8AE0028413F /* Date+Extension.swift in Sources */,
@@ -794,12 +790,14 @@
 				DEVELOPMENT_TEAM = 792N87PWZU;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Oneboard/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "원보드";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -825,12 +823,14 @@
 				DEVELOPMENT_TEAM = 792N87PWZU;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Oneboard/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "원보드";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

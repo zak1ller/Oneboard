@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-import SnackBar_swift
+import Toast_Swift
 
 extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -27,7 +27,7 @@ extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: (UIScreen.main.bounds.width/2)-24, height: 128)
+        return CGSize(width: (UIScreen.main.bounds.width/2)-22, height: 128)
     }
 }
 
@@ -41,7 +41,8 @@ extension MainViewController: MainListCollectionViewCellDelegate {
         searchBar.endEditing(true)
         VibrateManager.changeOrSelectVibrate()
         ClipboardManager.saveToClipboard(text: list[i].contents)
-        CustomSnackBar.make(in: view, message: "클립보드에 복사되었습니다.", duration: .lengthShort).show()
+        
+        view.makeToast("클립보드에 복사 됨")
     }
     
     func mainListCollectionViewDidLongPressed(i: Int) {
