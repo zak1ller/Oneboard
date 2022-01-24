@@ -11,7 +11,7 @@ import UIKit
 class ClipboardViewController: UIViewController {
     
     lazy var removeButton = UIButton(type: .system).then{
-        $0.setTitle("비우기", for: .normal)
+        $0.setTitle("GENERAL_CLEAR".localized, for: .normal)
         $0.setTitleColor(.lightGray, for: .normal)
         $0.titleLabel?.font = .textButton
         $0.layer.cornerRadius = 8
@@ -38,9 +38,9 @@ class ClipboardViewController: UIViewController {
     }
     
     @objc func removeAllButtonPressed() {
-        let alert = UIAlertController(title: "클립보드에 저장 된 모든 항목을 삭제합니다.", message: nil, preferredStyle: UIAlertController.actionSheetForiPad)
-        alert.addAction(UIAlertAction(title: "취소", style: .cancel, handler: nil))
-        alert.addAction(UIAlertAction(title: "삭제", style: .destructive, handler: { _ in
+        let alert = UIAlertController(title: "CLIPBOARD_CLEAR_MESSAGE".localized, message: nil, preferredStyle: UIAlertController.actionSheetForiPad)
+        alert.addAction(UIAlertAction(title: "GENERAL_CANCEL".localized, style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "GENERAL_DELETE".localized, style: .destructive, handler: { _ in
             ClipboardManager.removeAll()
             self.fetchClipboards()
         }))

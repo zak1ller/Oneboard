@@ -1,0 +1,35 @@
+/* 
+  Localizable.strings
+  Oneboard
+
+  Created by Min-Su Kim on 2022/01/24.
+  
+*/
+
+// MARK: 탭바
+"TABBAR_TITLE_LIST" = "List";
+"TABBAR_TITLE_CLIPBOARD" = "Clipboard";
+
+// MARK: 일반
+"GENERAL_COMFIRM" = "Confirm";
+"GENERAL_CANCEL" = "Cancel";
+"GENERAL_CLOSE" = "Close";
+"GENERAL_ADD" = "Add";
+"GENERAL_EDIT" = "Edit";
+"GENERAL_DELETE" = "Delete";
+"GENERAL_CLEAR" = "Clear";
+"GENERAL_SHARE" = "Share to";
+"GENERAL_SENT" = "Sent.";
+"GENERAL_SAVE" = "Save";
+
+// MARK: 클립보드
+"CLIPBOARD_EMPTY_SUBJECT" = "No title";
+"CLIPBOARD_COPIED" = "Copied to clipboard";
+"CLIPBOARD_EMPTY_LIST_MESSAGE" = "Empty list.\nTry adding a new item to be copied.";
+"CLIPBOARD_CLEAR_MESSAGE" = "Deletes all items stored on the clipboard.";
+"CLIPBOARD_SUBJECT" = "Title";
+"CLIPBOARD_CONTENTS" = "Contents";
+"CLIPBOARD_NEW_ADD" = "New item";
+"CLIPBOARD_TYPE_CONTENTS_REQUIRE" = "Please enter contents.";
+"CLIPBOARD_TYPE_SUBJECT_REQUIRE_LESS_THEN_20" = "Please enter title less than\n20 characters.";
+

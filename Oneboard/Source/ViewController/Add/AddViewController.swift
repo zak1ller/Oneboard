@@ -20,12 +20,12 @@ class AddViewController: UIViewController {
         $0.font = UIFont.topTitle
     }
     var saveButton = UIButton(type: .system).then{
-        $0.setTitle("저장", for: .normal)
+        $0.setTitle("GENERAL_SAVE".localized, for: .normal)
         $0.setTitleColor(UIColor.darkText, for: .normal)
         $0.titleLabel?.font = UIFont.textButton
     }
     var closeButton = UIButton(type: .system).then{
-        $0.setTitle("닫기", for: .normal)
+        $0.setTitle("GENERAL_CLOSE".localized, for: .normal)
         $0.setTitleColor(UIColor.darkText, for: .normal)
         $0.titleLabel?.font = UIFont.textButton
     }
@@ -33,7 +33,7 @@ class AddViewController: UIViewController {
         $0.textColor = UIColor.darkText
         $0.tintColor = UIColor.darkText
         $0.font = UIFont.contents
-        $0.placeholder = "제목"
+        $0.placeholder = "CLIPBOARD_SUBJECT".localized
     }
     var subjectDivider = UIView().then{
         $0.backgroundColor = UIColor.divider
@@ -48,7 +48,7 @@ class AddViewController: UIViewController {
     
     weak var delegate: AddViewControllerDelegate?
     private var keyboardHeight: CGFloat = 0
-    let contentTextViewPlaceHolder = "내용"
+    let contentTextViewPlaceHolder = "CLIPBOARD_CONTENTS".localized
     var isEditMode = false
     var toEditCopyItem: Copy?
     
@@ -126,12 +126,12 @@ class AddViewController: UIViewController {
     
     func setMode() {
         if isEditMode {
-            topTitleLabel.text = "편집"
+            topTitleLabel.text = "GENERAL_EDIT".localized
             subjectTextField.text = toEditCopyItem?.subject
             contentTextView.text = toEditCopyItem?.contents
             contentTextView.textColor = UIColor.darkText
         } else {
-            topTitleLabel.text = "새로운 목록"
+            topTitleLabel.text = "CLIPBOARD_NEW_ADD".localized
             contentTextView.text = contentTextViewPlaceHolder
             contentTextView.textColor = UIColor.lightGray
         }
@@ -150,8 +150,8 @@ class AddViewController: UIViewController {
         let content = makeContent()
         
         if let error = CopyManager.append(subject: subject, contents: content) {
-            let alert = UIAlertController(title: error.rawValue, message: nil, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "확인", style: .cancel, handler: nil))
+            let alert = UIAlertController(title: Copy.getErrorMessage(error), message: nil, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "GENERAL_COMFIRM".localized, style: .cancel, handler: nil))
             present(alert, animated: true, completion: nil)
         } else {
             dismiss(animated: true, completion: {
@@ -166,8 +166,8 @@ class AddViewController: UIViewController {
         let content = makeContent()
         
         if let error = CopyManager.edit(from: copy, newSubject: subject, newContents: content) {
-            let alert = UIAlertController(title: error.rawValue, message: nil, preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "확인", style: .cancel, handler: nil))
+            let alert = UIAlertController(title: Copy.getErrorMessage(error), message: nil, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "GENERAL_COMFIRM".localized, style: .cancel, handler: nil))
             present(alert, animated: true, completion: nil)
         } else {
             dismiss(animated: true, completion: {

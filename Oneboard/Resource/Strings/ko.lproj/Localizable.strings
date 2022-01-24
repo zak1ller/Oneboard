@@ -1,0 +1,34 @@
+/* 
+  Localizable.strings
+  Oneboard
+
+  Created by Min-Su Kim on 2022/01/24.
+  
+*/
+
+// MARK: 탭바
+"TABBAR_TITLE_LIST" = "목록";
+"TABBAR_TITLE_CLIPBOARD" = "클립보드";
+
+// MARK: 일반
+"GENERAL_COMFIRM" = "확인";
+"GENERAL_CANCEL" = "취소";
+"GENERAL_CLOSE" = "닫기";
+"GENERAL_ADD" = "추가";
+"GENERAL_EDIT" = "편집";
+"GENERAL_DELETE" = "삭제";
+"GENERAL_CLEAR" = "비우기";
+"GENERAL_SHARE" = "공유하기";
+"GENERAL_SENT" = "전송되었습니다.";
+"GENERAL_SAVE" = "저장";
+
+// MARK: 클립보드
+"CLIPBOARD_EMPTY_SUBJECT" = "제목 없음";
+"CLIPBOARD_COPIED" = "클립보드에 복사 됨";
+"CLIPBOARD_EMPTY_LIST_MESSAGE" = "목록이 비어있습니다.\n복사할 항목을 새롭게 추가해보세요.";
+"CLIPBOARD_CLEAR_MESSAGE" = "클립보드에 저장 된 모든 항목을 삭제합니다.";
+"CLIPBOARD_SUBJECT" = "제목";
+"CLIPBOARD_CONTENTS" = "내용";
+"CLIPBOARD_NEW_ADD" = "새로운 항목";
+"CLIPBOARD_TYPE_CONTENTS_REQUIRE" = "내용을 입력해주세요.";
+"CLIPBOARD_TYPE_SUBJECT_REQUIRE_LESS_THEN_20" = "제목은 20자 이내로 입력해주세요.";

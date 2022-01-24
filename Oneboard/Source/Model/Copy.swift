@@ -11,9 +11,9 @@ import IceCream
 
 class Copy: Object {
     
-    enum ErrorMessage: String {
-        case requireTypeContents = "내용을 입력해주세요."
-        case tooLongSubject = "제목은 20자 이내로 입력해주세요."
+    enum ErrorMessage {
+        case requireTypeContents
+        case tooLongSubject 
     }
     
     enum RequiredLength: Int {
@@ -29,6 +29,17 @@ class Copy: Object {
     
     override class func primaryKey() -> String? {
         return "id"
+    }
+    
+    static func getErrorMessage(_ message: ErrorMessage) -> String {
+        var title: String!
+        switch message {
+        case .tooLongSubject:
+            title = "CLIPBOARD_TYPE_SUBJECT_REQUIRE_LESS_THEN_20".localized
+        case .requireTypeContents:
+            title = "CLIPBOARD_TYPE_CONTENTS_REQUIRE".localized
+        }
+        return title
     }
 }
 

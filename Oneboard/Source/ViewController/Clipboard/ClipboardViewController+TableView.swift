@@ -22,11 +22,11 @@ extension ClipboardViewController: UITableViewDataSource, UITableViewDelegate {
         
         cell.longClick = { [weak self] in
             let alert = UIAlertController(title: nil, message: clipboard.contents, preferredStyle: UIAlertController.actionSheetForiPad)
-            alert.addAction(UIAlertAction(title: "취소", style: .cancel, handler: nil))
-            alert.addAction(UIAlertAction(title: "공유하기", style: .default, handler: { _ in
+            alert.addAction(UIAlertAction(title: "GENERAL_CANCEL".localized, style: .cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: "GENERAL_SHARE".localized, style: .default, handler: { _ in
                 self?.shareClipboard(clipboard)
             }))
-            alert.addAction(UIAlertAction(title: "삭제", style: .destructive, handler: { _ in
+            alert.addAction(UIAlertAction(title: "GENERAL_DELETE".localized, style: .destructive, handler: { _ in
                 self?.removeClipboard(clipboard)
             }))
             self?.present(alert, animated: true, completion: nil)
@@ -42,7 +42,7 @@ extension ClipboardViewController: UITableViewDataSource, UITableViewDelegate {
         activityViewController.popoverPresentationController?.sourceView = self.view
         activityViewController.completionWithItemsHandler = { (activityType: UIActivity.ActivityType?, completed: Bool, arrayReturnedItems: [Any]?, error: Error?) in
             if completed {
-                self.view.makeToast("전송되었습니다.")
+                self.view.makeToast("GENERAL_SENT".localized)
             }
         }
         self.present(activityViewController, animated: true, completion: nil)
@@ -56,7 +56,7 @@ extension ClipboardViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         VibrateManager.changeOrSelectVibrate()
         ClipboardManager.saveToClipboard(text: clipboards[indexPath.row].contents)
-        view.makeToast("클립보드에 복사 됨")
+        view.makeToast("CLIPBOARD_COPIED".localized)
     }
     
 }

@@ -15,10 +15,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         let mainViewController = MainViewController()
-        mainViewController.tabBarItem = UITabBarItem(title: "목록", image: UIImage(systemName: "list.bullet.circle"), selectedImage: nil)
+        mainViewController.tabBarItem = UITabBarItem(title: "TABBAR_TITLE_LIST".localized, image: UIImage(systemName: "list.bullet.circle"), selectedImage: nil)
         
         let clipboardViewController = ClipboardViewController()
-        clipboardViewController.tabBarItem = UITabBarItem(title: "클립보드", image: UIImage(systemName: "paperclip.circle"), selectedImage: nil)
+        clipboardViewController.tabBarItem = UITabBarItem(title: "TABBAR_TITLE_CLIPBOARD".localized, image: UIImage(systemName: "paperclip.circle"), selectedImage: nil)
         
         let tabBarController = UITabBarController()
         tabBarController.viewControllers = [mainViewController, clipboardViewController]

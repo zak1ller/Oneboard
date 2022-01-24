@@ -10,8 +10,8 @@ import CloudKit
 
 class MainViewController: UIViewController {
     
-    let addButton = UIButton(type: .system).then{
-        $0.setTitle("추가", for: .normal)
+    let addButton = UIButton().then{
+        $0.setTitle("GENERAL_ADD".localized, for: .normal)
         $0.setTitleColor(UIColor.darkText, for: .normal)
         $0.titleLabel?.font = UIFont.textButton
     }
@@ -30,7 +30,7 @@ class MainViewController: UIViewController {
         return cv
     }()
     let placeHolderLabel = UILabel().then{
-        $0.text = "목록이 비어있습니다.\n복사할 항목을 새롭게 추가해보세요."
+        $0.text = "CLIPBOARD_EMPTY_LIST_MESSAGE".localized
         $0.textColor = .lightGray
         $0.textAlignment = .center
         $0.font = .contents
@@ -42,10 +42,10 @@ class MainViewController: UIViewController {
     var isSearching = false {
         didSet {
             if isSearching {
-                addButton.setTitle("닫기", for: .normal)
+                addButton.setTitle("GENERAL_CLOSE".localized, for: .normal)
                 clearList()
             } else {
-                addButton.setTitle("추가", for: .normal)
+                addButton.setTitle("GENERAL_ADD".localized, for: .normal)
                 fetchList()
             }
         }
@@ -64,6 +64,7 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setView()
+        setConstraint()
         fetchList()
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+2, execute: {
             self.fetchList()
@@ -80,9 +81,6 @@ class MainViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        addButton.pin.top(view.pin.safeArea.top+16).right(16).sizeToFit()
-        addButton.pin.height(48)
-        searchBar.pin.top(view.pin.safeArea.top+16).left(16).before(of: addButton).right(16).height(48)
         collectionView.pin.left(16).right(16).below(of: searchBar).marginTop(16).bottom(view.pin.safeArea.bottom)
         placeHolderLabel.pin.left(16).right(16).vCenter().height(200)
     }
@@ -135,4 +133,17 @@ class MainViewController: UIViewController {
         collectionView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(pressedCollectionView)))
     }
     
+    func setConstraint() {
+        addButton.snp.makeConstraints { make in
+            make.height.equalTo(48)
+            make.trailing.equalToSuperview().offset(-16)
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(16)
+        }
+        searchBar.snp.makeConstraints { make in
+            make.height.equalTo(48)
+            make.leading.equalToSuperview().offset(16)
+            make.trailing.equalTo(self.addButton.snp.leading).offset(-16)
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(16)
+        }
+    }
 }

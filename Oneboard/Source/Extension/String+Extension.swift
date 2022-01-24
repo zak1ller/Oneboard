@@ -8,6 +8,11 @@
 import Foundation
 
 extension String {
+    
+    var localized: String {
+        return NSLocalizedString(self, tableName: "Localizable", value: self, comment: "")
+    }
+    
     static func randomString(of length: Int) -> String {
         let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
         var s = ""

@@ -42,7 +42,7 @@ extension MainViewController: MainListCollectionViewCellDelegate {
         VibrateManager.changeOrSelectVibrate()
         ClipboardManager.saveToClipboard(text: list[i].contents)
         
-        view.makeToast("클립보드에 복사 됨")
+        view.makeToast("CLIPBOARD_COPIED".localized)
     }
     
     func mainListCollectionViewDidLongPressed(i: Int) {
@@ -52,24 +52,24 @@ extension MainViewController: MainListCollectionViewCellDelegate {
         var subject: String {
             if let value = item.subject {
                 if value.isEmpty {
-                    return "제목 없음"
+                    return "CLIPBOARD_EMPTY_SUBJECT".localized
                 } else {
                     return value
                 }
             } else {
-                return "제목 없음"
+                return "CLIPBOARD_EMPTY_SUBJECT".localized
             }
         }
         
         let alert = UIAlertController(title: subject, message: nil, preferredStyle: UIAlertController.actionSheetForiPad)
-        alert.addAction(UIAlertAction(title: "취소", style: .cancel, handler: nil))
-        alert.addAction(UIAlertAction(title: "공유하기", style: .default, handler: { _ in
+        alert.addAction(UIAlertAction(title: "GENERAL_CANCEL".localized, style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "GENERAL_SHARE".localized, style: .default, handler: { _ in
             self.shareCopy(item)
         }))
-        alert.addAction(UIAlertAction(title: "편집", style: .default, handler: { _ in
+        alert.addAction(UIAlertAction(title: "GENERAL_EDIT".localized, style: .default, handler: { _ in
             self.editCopy(item)
         }))
-        alert.addAction(UIAlertAction(title: "삭제", style: .destructive, handler: { _ in
+        alert.addAction(UIAlertAction(title: "GENERAL_DELETE".localized, style: .destructive, handler: { _ in
             self.removeCopy(item)
         }))
         present(alert, animated: true, completion: nil)
@@ -83,7 +83,7 @@ extension MainViewController: MainListCollectionViewCellDelegate {
         activityViewController.popoverPresentationController?.sourceView = self.view
         activityViewController.completionWithItemsHandler = { (activityType: UIActivity.ActivityType?, completed: Bool, arrayReturnedItems: [Any]?, error: Error?) in
             if completed {
-                self.view.makeToast("전송되었습니다.")
+                self.view.makeToast("GENERAL_SENT".localized)
             }
         }
         self.present(activityViewController, animated: true, completion: nil)
