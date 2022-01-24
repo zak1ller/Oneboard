@@ -24,7 +24,7 @@ extension ClipboardViewController: UITableViewDataSource, UITableViewDelegate {
             let alert = UIAlertController(title: nil, message: clipboard.contents, preferredStyle: UIAlertController.actionSheetForiPad)
             alert.addAction(UIAlertAction(title: "GENERAL_CANCEL".localized, style: .cancel, handler: nil))
             alert.addAction(UIAlertAction(title: "GENERAL_SHARE".localized, style: .default, handler: { _ in
-                self?.shareClipboard(clipboard)
+                self?.shareClipboard(clipboard, indexPath.row)
             }))
             alert.addAction(UIAlertAction(title: "GENERAL_DELETE".localized, style: .destructive, handler: { _ in
                 self?.removeClipboard(clipboard)
@@ -34,12 +34,18 @@ extension ClipboardViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
-    func shareClipboard(_ clipboard: Clipboard) {
+    func shareClipboard(_ clipboard: Clipboard, _ index: Int) {
         var shareObject = [Any]()
         shareObject.append(clipboard.contents ?? "")
         
         let activityViewController = UIActivityViewController(activityItems : shareObject, applicationActivities: nil)
         activityViewController.popoverPresentationController?.sourceView = self.view
+        
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            let rect = self.tableView.rectForRow(at: IndexPath(row: index, section: 0))
+            activityViewController.popoverPresentationController?.sourceRect = rect
+        }
+        
         activityViewController.completionWithItemsHandler = { (activityType: UIActivity.ActivityType?, completed: Bool, arrayReturnedItems: [Any]?, error: Error?) in
             if completed {
                 self.view.makeToast("GENERAL_SENT".localized)

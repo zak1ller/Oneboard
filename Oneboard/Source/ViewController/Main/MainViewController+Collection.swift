@@ -64,7 +64,7 @@ extension MainViewController: MainListCollectionViewCellDelegate {
         let alert = UIAlertController(title: subject, message: nil, preferredStyle: UIAlertController.actionSheetForiPad)
         alert.addAction(UIAlertAction(title: "GENERAL_CANCEL".localized, style: .cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "GENERAL_SHARE".localized, style: .default, handler: { _ in
-            self.shareCopy(item)
+            self.shareCopy(item, i)
         }))
         alert.addAction(UIAlertAction(title: "GENERAL_EDIT".localized, style: .default, handler: { _ in
             self.editCopy(item)
@@ -75,12 +75,19 @@ extension MainViewController: MainListCollectionViewCellDelegate {
         present(alert, animated: true, completion: nil)
     }
     
-    func shareCopy(_ item: Copy) {
+    func shareCopy(_ item: Copy, _ index: Int) {
         var shareObject = [Any]()
         shareObject.append(item.contents ?? "")
         
         let activityViewController = UIActivityViewController(activityItems : shareObject, applicationActivities: nil)
         activityViewController.popoverPresentationController?.sourceView = self.view
+        
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            let attributes = collectionView.layoutAttributesForItem(at: IndexPath(row: index, section: 0))
+            let cellFrameInSuperview = collectionView.convert(attributes!.frame, to: collectionView.superview)
+            activityViewController.popoverPresentationController?.sourceRect = cellFrameInSuperview
+        }
+            
         activityViewController.completionWithItemsHandler = { (activityType: UIActivity.ActivityType?, completed: Bool, arrayReturnedItems: [Any]?, error: Error?) in
             if completed {
                 self.view.makeToast("GENERAL_SENT".localized)
