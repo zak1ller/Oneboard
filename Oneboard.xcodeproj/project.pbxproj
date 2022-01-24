@@ -26,6 +26,9 @@
 		7166D447278B36C80028413F /* VibrateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7166D446278B36C80028413F /* VibrateManager.swift */; };
 		7170539D2792986100039917 /* MainViewController+Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7170539C2792986100039917 /* MainViewController+Search.swift */; };
 		719DA29D279E560D00BEFD77 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 719DA29F279E560D00BEFD77 /* Localizable.strings */; };
+		719DA2A2279E61D400BEFD77 /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719DA2A1279E61D400BEFD77 /* CustomTabBarController.swift */; };
+		719DA2A4279E61EB00BEFD77 /* CALayer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719DA2A3279E61EB00BEFD77 /* CALayer+Extension.swift */; };
+		719DA2A6279E620C00BEFD77 /* UITabBar+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719DA2A5279E620C00BEFD77 /* UITabBar+Extension.swift */; };
 		71B725562793BC6F0062B84B /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71B725552793BC6F0062B84B /* CloudKit.framework */; };
 		71BEAA7827896F6A00EF8FE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEAA7727896F6A00EF8FE8 /* AppDelegate.swift */; };
 		71BEAA7A27896F6A00EF8FE8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEAA7927896F6A00EF8FE8 /* SceneDelegate.swift */; };
@@ -84,6 +87,9 @@
 		7170539C2792986100039917 /* MainViewController+Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+Search.swift"; sourceTree = "<group>"; };
 		719DA29E279E560D00BEFD77 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		719DA2A0279E562B00BEFD77 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
+		719DA2A1279E61D400BEFD77 /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
+		719DA2A3279E61EB00BEFD77 /* CALayer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Extension.swift"; sourceTree = "<group>"; };
+		719DA2A5279E620C00BEFD77 /* UITabBar+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITabBar+Extension.swift"; sourceTree = "<group>"; };
 		71B725542793BC6C0062B84B /* Oneboard.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Oneboard.entitlements; sourceTree = "<group>"; };
 		71B725552793BC6F0062B84B /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		71BEAA7427896F6A00EF8FE8 /* Oneboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Oneboard.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -203,6 +209,7 @@
 				7166D434278AE1320028413F /* Main */,
 				7166D435278AE1380028413F /* Add */,
 				71258F4D279700BF006D7237 /* Clipboard */,
+				719DA2A1279E61D400BEFD77 /* CustomTabBarController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -217,6 +224,8 @@
 				7166D43A278AE8AE0028413F /* Date+Extension.swift */,
 				71C9176E27932E2E00976A2B /* UIImiageVIew+Extension.swift */,
 				71D2FA4827958C5400C62951 /* UIAlertController+Extension.swift */,
+				719DA2A3279E61EB00BEFD77 /* CALayer+Extension.swift */,
+				719DA2A5279E620C00BEFD77 /* UITabBar+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -617,9 +626,11 @@
 				7166D437278AE14C0028413F /* AddViewController+TextView.swift in Sources */,
 				7166D447278B36C80028413F /* VibrateManager.swift in Sources */,
 				7166D439278AE7D90028413F /* String+Extension.swift in Sources */,
+				719DA2A2279E61D400BEFD77 /* CustomTabBarController.swift in Sources */,
 				71BEAA7827896F6A00EF8FE8 /* AppDelegate.swift in Sources */,
 				71BEAA7A27896F6A00EF8FE8 /* SceneDelegate.swift in Sources */,
 				7166D42B2789DFB80028413F /* CopyManager.swift in Sources */,
+				719DA2A6279E620C00BEFD77 /* UITabBar+Extension.swift in Sources */,
 				71D2FA4927958C5400C62951 /* UIAlertController+Extension.swift in Sources */,
 				7166D42F278A0AB90028413F /* UIButton+Extension.swift in Sources */,
 				71258F54279843F8006D7237 /* Clipboard.swift in Sources */,
@@ -629,6 +640,7 @@
 				7143410C2789782D00F148A0 /* UIColor+Extension.swift in Sources */,
 				71C17FB1278DD17000B840D0 /* ClipboardManager.swift in Sources */,
 				71258F5627984F70006D7237 /* ClipboardViewController+TableView.swift in Sources */,
+				719DA2A4279E61EB00BEFD77 /* CALayer+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

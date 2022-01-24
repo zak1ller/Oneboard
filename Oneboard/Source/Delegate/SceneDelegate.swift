@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let clipboardViewController = ClipboardViewController()
         clipboardViewController.tabBarItem = UITabBarItem(title: "TABBAR_TITLE_CLIPBOARD".localized, image: UIImage(systemName: "paperclip.circle"), selectedImage: nil)
         
-        let tabBarController = UITabBarController()
+        let tabBarController = CustomTabBarController()
         tabBarController.viewControllers = [mainViewController, clipboardViewController]
         tabBarController.tabBar.tintColor = .darkText
         tabBarController.tabBar.backgroundColor = .background
