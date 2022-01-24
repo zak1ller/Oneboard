@@ -1,6 +1,6 @@
 PODS:
-  - IceCream (2.0.2):
-    - RealmSwift
+  - IceCream (2.0.4):
+    - RealmSwift (< 10.8.0)
   - PinLayout (1.10.0)
   - Realm (10.7.7):
     - Realm/Headers (= 10.7.7)
@@ -14,7 +14,7 @@ PODS:
 DEPENDENCIES:
   - IceCream
   - PinLayout
-  - RealmSwift (= 10.7.7)
+  - RealmSwift
   - SnapKit
   - Then
   - Toast-Swift
@@ -30,7 +30,7 @@ SPEC REPOS:
     - Toast-Swift
 
 SPEC CHECKSUMS:
-  IceCream: 2772755afb39f79597e5dc250f4d3f891a65f870
+  IceCream: 717d516a1c634eba8eaa8ce7d3d7bc5f7e40c2fa
   PinLayout: e50e9a748b632905fca6e67043ea4b05d6c92186
   Realm: 8010af8b7a576ba501729bcbc54a3cd1f1f7dca3
   RealmSwift: dc17e6d649c12a8996f9e962c3fe6cef356885c4
@@ -38,6 +38,6 @@ SPEC CHECKSUMS:
   Then: acfe0be7e98221c6204e12f8161459606d5d822d
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: 365fe9bf04b98a0a5786009cfdb877e90dc68658
+PODFILE CHECKSUM: 3058244ab79962b36ecd739435844243a9017915
 
 COCOAPODS: 1.11.2
