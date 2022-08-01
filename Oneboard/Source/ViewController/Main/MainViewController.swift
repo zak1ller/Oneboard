@@ -66,6 +66,7 @@ class MainViewController: UIViewController {
         setView()
         setConstraint()
         fetchList()
+      
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now()+2, execute: {
             self.fetchList()
         })
